@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="GameShelf: la mia libreria di videogiochi, backlog e platini."
+  >
+  <title>GameShelf — La mia libreria gaming</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #0b1020;
+      color: #f1f5f9;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 20px;
+      border-bottom: 1px solid #263149;
+    }
+
+    .contenitore {
+      width: min(1100px, 100%);
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #a78bfa;
+    }
+
+    main {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    .etichetta {
+      color: #a78bfa;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: clamp(32px, 6vw, 56px);
+      line-height: 1.15;
+      margin: 15px 0;
+    }
+
+    .introduzione {
+      color: #aab6cd;
+      max-width: 650px;
+      font-size: 18px;
+    }
+
+    .griglia {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+      margin-top: 36px;
+    }
+
+    .scheda {
+      padding: 24px;
+      background: #151d31;
+      border: 1px solid #263149;
+      border-radius: 16px;
+    }
+
+    .scheda h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    .scheda p {
+      margin: 0;
+      color: #aab6cd;
+    }
+
+    .avviso {
+      margin-top: 32px;
+      padding: 18px;
+      background: #201b39;
+      border: 1px solid #64518c;
+      border-radius: 12px;
+    }
+
+    footer {
+      padding: 24px;
+      text-align: center;
+      color: #aab6cd;
+      border-top: 1px solid #263149;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="contenitore">
+      <div class="logo">🎮 Game<span>Shelf</span></div>
+    </div>
+  </header>
+
+  <main class="contenitore">
+    <p class="etichetta">Il mio spazio gaming</p>
+
+    <h1>Tutti i miei giochi.<br>Un unico posto.</h1>
+
+    <p class="introduzione">
+      La mia libreria personale per organizzare i giochi da iniziare,
+      seguire quelli in corso e raccogliere completamenti e platini.
+    </p>
+
+    <section class="griglia" aria-label="Sezioni in programma">
+      <article class="scheda">
+        <h2>🎮 Libreria</h2>
+        <p>La mia collezione di giochi su PC e console.</p>
+      </article>
+
+      <article class="scheda">
+        <h2>📋 Backlog</h2>
+        <p>I titoli da iniziare e le avventure ancora da finire.</p>
+      </article>
+
+      <article class="scheda">
+        <h2>🏆 Platini</h2>
+        <p>I miei trofei di platino e i prossimi obiettivi.</p>
+      </article>
+
+      <article class="scheda">
+        <h2>⭐ Wishlist</h2>
+        <p>I giochi che vorrei aggiungere alla collezione.</p>
+      </article>
+    </section>
+
+    <aside class="avviso">
+      🚧 Sito in costruzione: presto sarà possibile cercare i giochi
+      e aggiungerli con immagini e informazioni automatiche.
+    </aside>
+  </main>
+
+  <footer>
+    GameShelf · Il mio diario videoludico
+  </footer>
+</body>
+</html>
