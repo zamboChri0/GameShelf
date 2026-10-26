@@ -495,3 +495,164 @@
   margin-top: 16px;
   width: 100%;
 }
+
+/* Libreria: schede ordinate e controlli leggibili */
+
+#lista-libreria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+#lista-libreria .scheda-gioco {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #151b2d;
+  border: 1px solid #2c354b;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+#lista-libreria .scheda-gioco:hover {
+  transform: translateY(-3px);
+  border-color: #8b78d8;
+}
+
+/* Immagini: stessa altezza anche tra giochi diversi */
+
+#lista-libreria .contenitore-immagine {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #20283c;
+}
+
+#lista-libreria .contenitore-immagine img,
+#lista-libreria .scheda-gioco > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* Titolo e pulsante: due colonne, senza sovrapposizioni */
+
+#lista-libreria .intestazione-scheda {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 12px;
+  padding: 18px 18px 0;
+}
+
+#lista-libreria .intestazione-scheda h3 {
+  min-width: 0;
+  margin: 0;
+  color: #f4f5fb;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+#lista-libreria .pulsante-modifica {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 0;
+  height: auto;
+  margin: 0;
+  padding: 7px 10px;
+  background: #242b40;
+  border: 1px solid #414b68;
+  border-radius: 9px;
+  color: #ddd6fe;
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+#lista-libreria .pulsante-modifica:hover {
+  background: #343052;
+  border-color: #a78bfa;
+}
+
+#lista-libreria .pulsante-modifica:focus-visible {
+  outline: 2px solid #c4b5fd;
+  outline-offset: 3px;
+}
+
+/* Piattaforma */
+
+#lista-libreria .piattaforma-gioco {
+  margin: 8px 18px 18px;
+  color: #aab4ca;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* Dati statici: etichetta a sinistra, valore a destra */
+
+#lista-libreria .dettagli-gioco {
+  display: grid;
+  gap: 12px;
+  margin: auto 18px 0;
+  padding: 16px 0 18px;
+  border-top: 1px solid #2c354b;
+}
+
+#lista-libreria .dettagli-gioco p {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  margin: 0;
+  color: #e5e9f3;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  text-align: right;
+}
+
+#lista-libreria .dettagli-gioco p > span {
+  flex-shrink: 0;
+  color: #99a5bd;
+  text-align: left;
+}
+
+#lista-libreria .dettagli-gioco .platino-ottenuto {
+  color: #f6d775;
+}
+
+/* Schermi piccoli */
+
+@media (max-width: 600px) {
+  #lista-libreria {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #lista-libreria .scheda-gioco {
+    transition: none;
+  }
+
+  #lista-libreria .scheda-gioco:hover {
+    transform: none;
+  }
+}

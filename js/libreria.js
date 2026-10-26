@@ -59,7 +59,7 @@ function creaSchedaLibreria(gioco) {
   pulsanteModifica.type = "button";
   pulsanteModifica.className = "pulsante-modifica";
   pulsanteModifica.setAttribute("aria-label", `Modifica ${gioco.nome}`);
-  pulsanteModifica.textContent = "✏️";
+  pulsanteModifica.textContent = "Modifica";
 
   pulsanteModifica.addEventListener("click", () => {
     apriModificaGioco(gioco);
