@@ -92,3 +92,126 @@
       color: #aab6cd;
       border-top: 1px solid #263149;
     }
+
+    /* Ricerca dei giochi */
+
+.ricerca-giochi {
+  margin-top: 48px;
+}
+
+.ricerca-giochi > p {
+  color: #aab6cd;
+}
+
+.barra-ricerca {
+  margin-top: 24px;
+}
+
+.barra-ricerca label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.campi-ricerca {
+  display: flex;
+  gap: 12px;
+}
+
+.campi-ricerca input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid #43516c;
+  border-radius: 10px;
+  background: #151d31;
+  color: #f1f5f9;
+  font: inherit;
+}
+
+.campi-ricerca input::placeholder {
+  color: #aab6cd;
+}
+
+.campi-ricerca button {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 10px;
+  background: #a78bfa;
+  color: #0b1020;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.campi-ricerca button:hover {
+  background: #c4b5fd;
+}
+
+.campi-ricerca button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.campi-ricerca input:focus-visible,
+.campi-ricerca button:focus-visible,
+.crediti a:focus-visible {
+  outline: 3px solid #c4b5fd;
+  outline-offset: 3px;
+}
+
+#messaggio-ricerca {
+  min-height: 26px;
+  margin-top: 16px;
+}
+
+#risultati-ricerca {
+  margin-top: 20px;
+}
+
+.scheda-gioco {
+  overflow: hidden;
+  padding: 0;
+}
+
+.scheda-gioco img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.scheda-gioco h3 {
+  margin: 18px 18px 12px;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.scheda-gioco p {
+  margin: 0 18px 12px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.scheda-gioco p:last-child {
+  margin-bottom: 20px;
+}
+
+.crediti {
+  margin-top: 24px;
+  font-size: 13px;
+}
+
+.crediti a {
+  color: #c4b5fd;
+}
+
+@media (max-width: 540px) {
+  .campi-ricerca {
+    flex-direction: column;
+  }
+
+  .campi-ricerca button {
+    width: 100%;
+  }
+}

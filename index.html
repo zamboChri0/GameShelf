@@ -52,14 +52,52 @@
       </article>
     </section>
 
-    <aside class="avviso">
-      🚧 Sito in costruzione: presto sarà possibile cercare i giochi
-      e aggiungerli con immagini e informazioni automatiche.
-    </aside>
+    <section class="ricerca-giochi" aria-labelledby="titolo-ricerca">
+      <h2 id="titolo-ricerca">Cerca un videogioco</h2>
+
+      <p>
+        Trova un titolo e scopri immagini, piattaforme e generi.
+      </p>
+
+      <form id="form-ricerca" class="barra-ricerca">
+        <label for="nome-gioco">Nome del gioco</label>
+
+        <div class="campi-ricerca">
+          <input
+            type="search"
+            id="nome-gioco"
+            name="search"
+            placeholder="Ad esempio: Elden Ring"
+            minlength="2"
+            maxlength="100"
+            required
+          >
+
+          <button type="submit" id="pulsante-ricerca">
+            Cerca
+          </button>
+        </div>
+      </form>
+
+      <p id="messaggio-ricerca" role="status"></p>
+
+      <div id="risultati-ricerca" class="griglia"></div>
+
+      <p class="crediti">
+        Dati e immagini forniti da
+        <a href="https://rawg.io/" target="_blank" rel="noopener noreferrer">
+          RAWG
+        </a>.
+      </p>
+    </section>
+
   </main>
 
   <footer>
     GameShelf · Il mio diario videoludico
   </footer>
+
+    <script src="js/ricerca.js"></script>
 </body>
 </html>
+
