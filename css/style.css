@@ -275,3 +275,21 @@
   color: #c4b5fd;
   font-size: 14px;
 }
+
+
+/* Libreria personale */
+
+.libreria {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid #263149;
+}
+
+#messaggio-libreria {
+  color: #aab6cd;
+  min-height: 26px;
+}
+
+#lista-libreria {
+  margin-top: 24px;
+}

@@ -152,6 +152,11 @@ function creaSchedaGioco(gioco) {
       );
 
       messaggio.textContent = risultato.messaggio;
+        
+      if (risultato.aggiunto) {
+        mostraLibreria();
+      }
+
     } catch (errore) {
       console.error("Errore nel salvataggio:", errore);
 
