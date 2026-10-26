@@ -44,18 +44,72 @@ function creaSchedaLibreria(gioco) {
     scheda.appendChild(immagine);
   }
 
+  const intestazione = document.createElement("div");
+  intestazione.className = "intestazione-scheda";
+
   const titolo = document.createElement("h3");
   titolo.textContent = gioco.nome;
 
-  const piattaforma = document.createElement("p");
-  piattaforma.textContent = `Piattaforma: ${gioco.piattaforma}`;
+  const pulsanteModifica = document.createElement("button");
+  pulsanteModifica.type = "button";
+  pulsanteModifica.className = "pulsante-modifica";
+  pulsanteModifica.textContent = "Modifica";
 
-  scheda.append(titolo, piattaforma);
+  pulsanteModifica.addEventListener("click", () => {
+    apriModificaGioco(gioco);
+  });
+
+  intestazione.append(titolo, pulsanteModifica);
+
+  const piattaforma = document.createElement("p");
+  piattaforma.className = "piattaforma-gioco";
+  piattaforma.textContent = gioco.piattaforma;
+
+  const dettagli = document.createElement("div");
+  dettagli.className = "dettagli-gioco";
+
+  const stato = document.createElement("p");
+  stato.innerHTML = `<span>Stato</span>${gioco.stato}`;
+
+  dettagli.appendChild(stato);
+
+  if (/playstation/i.test(gioco.piattaforma)) {
+    const platino = document.createElement("p");
+    platino.className = gioco.platino ? "platino-ottenuto" : "";
+
+    platino.innerHTML = gioco.platino
+      ? `<span>Platino</span>🏆 Ottenuto`
+      : `<span>Platino</span>Non ottenuto`;
+
+    dettagli.appendChild(platino);
+  }
+
+  scheda.append(intestazione, piattaforma, dettagli);
+
+  return scheda;
+}
+
+function apriModificaGioco(gioco) {
+  const overlay = document.createElement("div");
+  overlay.className = "overlay-modifica";
+
+  const finestra = document.createElement("div");
+  finestra.className = "finestra-modifica";
+  finestra.setAttribute("role", "dialog");
+  finestra.setAttribute("aria-modal", "true");
+  finestra.setAttribute("aria-labelledby", "titolo-modifica");
+
+  const titolo = document.createElement("h2");
+  titolo.id = "titolo-modifica";
+  titolo.textContent = `Modifica ${gioco.nome}`;
+
+  const piattaforma = document.createElement("p");
+  piattaforma.className = "piattaforma-gioco";
+  piattaforma.textContent = gioco.piattaforma;
 
   const form = document.createElement("form");
   form.className = "form-aggiunta";
 
-  // Stato del gioco
   const labelStato = document.createElement("label");
   labelStato.textContent = "Stato";
 
@@ -71,7 +125,6 @@ function creaSchedaLibreria(gioco) {
   selectStato.value = gioco.stato;
   labelStato.appendChild(selectStato);
 
-  // Platino: disponibile per le piattaforme PlayStation
   const supportaPlatino = /playstation/i.test(gioco.piattaforma);
 
   const labelPlatino = document.createElement("label");
@@ -89,14 +142,18 @@ function creaSchedaLibreria(gioco) {
 
   labelPlatino.append(checkboxPlatino, testoPlatino);
 
-  // Salvataggio
+  const messaggio = document.createElement("p");
+  messaggio.className = "messaggio-aggiunta";
+  messaggio.setAttribute("role", "status");
+
   const pulsanteSalva = document.createElement("button");
   pulsanteSalva.type = "submit";
   pulsanteSalva.textContent = "Salva modifiche";
 
-  const messaggio = document.createElement("p");
-  messaggio.className = "messaggio-aggiunta";
-  messaggio.setAttribute("role", "status");
+  const pulsanteAnnulla = document.createElement("button");
+  pulsanteAnnulla.type = "button";
+  pulsanteAnnulla.className = "pulsante-secondario";
+  pulsanteAnnulla.textContent = "Annulla";
 
   form.addEventListener("submit", (evento) => {
     evento.preventDefault();
@@ -107,14 +164,14 @@ function creaSchedaLibreria(gioco) {
         platino: supportaPlatino && checkboxPlatino.checked,
       });
 
-      messaggio.textContent = "Modifiche salvate!";
+      chiudiModifica();
+      mostraLibreria();
     } catch (errore) {
       console.error("Errore nell'aggiornamento:", errore);
       messaggio.textContent = "Impossibile salvare le modifiche.";
     }
   });
 
-  // Eliminazione con conferma
   const pulsanteElimina = document.createElement("button");
   pulsanteElimina.type = "button";
   pulsanteElimina.className = "pulsante-elimina";
@@ -131,6 +188,7 @@ function creaSchedaLibreria(gioco) {
 
     try {
       eliminaDallaLibreria(gioco.id);
+      chiudiModifica();
       mostraLibreria();
     } catch (errore) {
       console.error("Errore nell'eliminazione:", errore);
@@ -138,17 +196,30 @@ function creaSchedaLibreria(gioco) {
     }
   });
 
-  form.append(
-    labelStato,
-    labelPlatino,
-    pulsanteSalva,
-    pulsanteElimina,
-    messaggio
-  );
+  function chiudiModifica() {
+    overlay.remove();
+  }
 
-  scheda.appendChild(form);
+  pulsanteAnnulla.addEventListener("click", chiudiModifica);
 
-  return scheda;
+  overlay.addEventListener("click", (evento) => {
+    if (evento.target === overlay) {
+      chiudiModifica();
+    }
+  });
+
+  document.addEventListener("keydown", function gestisciEscape(evento) {
+    if (evento.key === "Escape") {
+      chiudiModifica();
+      document.removeEventListener("keydown", gestisciEscape);
+    }
+  });
+
+  form.append(labelStato, labelPlatino, pulsanteSalva, pulsanteAnnulla, messaggio);
+
+  finestra.append(titolo, piattaforma, form, pulsanteElimina);
+  overlay.appendChild(finestra);
+  document.body.appendChild(overlay);
 }
 
 mostraLibreria();
