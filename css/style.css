@@ -323,56 +323,132 @@
 
 /* Scheda libreria */
 
+#lista-libreria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  align-items: start;
+}
+
+.scheda-gioco {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.scheda-gioco:hover {
+  transform: translateY(-4px);
+  border-color: #a78bfa;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+}
+
+.contenitore-immagine {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: #18181b;
+}
+
+.contenitore-immagine img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .intestazione-scheda {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
+  padding: 14px 14px 0;
 }
 
 .intestazione-scheda h3 {
   margin: 0;
+  font-size: 1rem;
+  line-height: 1.3;
 }
 
 .pulsante-modifica {
-  background: transparent;
-  border: 1px solid #a78bfa;
-  color: #c4b5fd;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.pulsante-modifica:hover {
-  background: #3b2a5c;
-}
-
-.piattaforma-gioco {
-  margin: 4px 0 12px;
-  color: #a1a1aa;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  background: #27272a;
+  border: 1px solid #3f3f46;
+  color: #d4d4d8;
+  border-radius: 10px;
   font-size: 0.9rem;
 }
 
-.dettagli-gioco {
-  display: grid;
-  gap: 8px;
+.pulsante-modifica:hover {
+  background: #3f3f46;
+  border-color: #a78bfa;
 }
 
-.dettagli-gioco p {
-  margin: 0;
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  font-size: 0.92rem;
-}
-
-.dettagli-gioco span {
+.piattaforma-gioco {
+  margin: 4px 14px 12px;
   color: #a1a1aa;
+  font-size: 0.82rem;
 }
 
-.platino-ottenuto {
-  color: #fcd34d;
+.badges-gioco {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 14px 16px;
+  margin-top: auto;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border: 1px solid transparent;
+}
+
+.badge-piattaforma {
+  background: #27272a;
+  border-color: #3f3f46;
+  color: #d4d4d8;
+}
+
+.stato-da-iniziare {
+  background: #1e293b;
+  border-color: #334155;
+  color: #93c5fd;
+}
+
+.stato-in-corso {
+  background: #422006;
+  border-color: #92400e;
+  color: #fbbf24;
+}
+
+.stato-finito {
+  background: #052e16;
+  border-color: #166534;
+  color: #86efac;
+}
+
+.stato-abbandonato {
+  background: #3f1d2b;
+  border-color: #9f1239;
+  color: #fda4af;
+}
+
+.badge-platino {
+  background: #422006;
+  border-color: #a16207;
+  color: #fde047;
 }
 
 /* Finestra di modifica */

@@ -31,20 +31,25 @@ function creaSchedaLibreria(gioco) {
   const scheda = document.createElement("article");
   scheda.className = "scheda scheda-gioco";
 
-  if (gioco.immagine) {
+    if (gioco.immagine) {
+    const contenitoreImmagine = document.createElement("div");
+    contenitoreImmagine.className = "contenitore-immagine";
+
     const immagine = document.createElement("img");
     immagine.src = gioco.immagine;
     immagine.alt = `Immagine di ${gioco.nome}`;
     immagine.loading = "lazy";
 
     immagine.addEventListener("error", () => {
-      immagine.remove();
+      contenitoreImmagine.remove();
     });
 
-    scheda.appendChild(immagine);
+    contenitoreImmagine.appendChild(immagine);
+    scheda.appendChild(contenitoreImmagine);
   }
 
-  const intestazione = document.createElement("div");
+
+    const intestazione = document.createElement("div");
   intestazione.className = "intestazione-scheda";
 
   const titolo = document.createElement("h3");
@@ -53,7 +58,8 @@ function creaSchedaLibreria(gioco) {
   const pulsanteModifica = document.createElement("button");
   pulsanteModifica.type = "button";
   pulsanteModifica.className = "pulsante-modifica";
-  pulsanteModifica.textContent = "Modifica";
+  pulsanteModifica.setAttribute("aria-label", `Modifica ${gioco.nome}`);
+  pulsanteModifica.textContent = "✏️";
 
   pulsanteModifica.addEventListener("click", () => {
     apriModificaGioco(gioco);
@@ -65,26 +71,37 @@ function creaSchedaLibreria(gioco) {
   piattaforma.className = "piattaforma-gioco";
   piattaforma.textContent = gioco.piattaforma;
 
-  const dettagli = document.createElement("div");
-  dettagli.className = "dettagli-gioco";
+  const badgeStato = document.createElement("span");
+  badgeStato.className = "badge badge-stato";
 
-  const stato = document.createElement("p");
-  stato.innerHTML = `<span>Stato</span>${gioco.stato}`;
+  const classiStato = {
+    "Da iniziare": "stato-da-iniziare",
+    "In corso": "stato-in-corso",
+    "Finito": "stato-finito",
+    "Abbandonato": "stato-abbandonato",
+  };
 
-  dettagli.appendChild(stato);
+  badgeStato.classList.add(classiStato[gioco.stato] || "stato-da-iniziare");
+  badgeStato.textContent = gioco.stato;
 
-  if (/playstation/i.test(gioco.piattaforma)) {
-    const platino = document.createElement("p");
-    platino.className = gioco.platino ? "platino-ottenuto" : "";
+  const badgePiattaforma = document.createElement("span");
+  badgePiattaforma.className = "badge badge-piattaforma";
+  badgePiattaforma.textContent = gioco.piattaforma;
 
-    platino.innerHTML = gioco.platino
-      ? `<span>Platino</span>🏆 Ottenuto`
-      : `<span>Platino</span>Non ottenuto`;
+  const badgePlatino = document.createElement("span");
+  badgePlatino.className = "badge badge-platino";
+  badgePlatino.textContent = "🏆 Platino";
 
-    dettagli.appendChild(platino);
+  const badges = document.createElement("div");
+  badges.className = "badges-gioco";
+  badges.appendChild(badgeStato);
+  badges.appendChild(badgePiattaforma);
+
+  if (/playstation/i.test(gioco.piattaforma) && gioco.platino) {
+    badges.appendChild(badgePlatino);
   }
 
-  scheda.append(intestazione, piattaforma, dettagli);
+  scheda.append(intestazione, piattaforma, badges);
 
   return scheda;
 }
