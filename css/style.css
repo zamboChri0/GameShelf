@@ -170,16 +170,21 @@
 }
 
 .scheda-gioco {
+  min-width: 0;
   overflow: hidden;
   padding: 0;
 }
 
+
 .scheda-gioco img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  max-width: 100%;
+  height: 180px;
   object-fit: cover;
+  object-position: center;
 }
+
 
 .scheda-gioco h3 {
   margin: 18px 18px 12px;
