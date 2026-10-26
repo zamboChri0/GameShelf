@@ -58,3 +58,29 @@ function aggiungiAllaLibreria(gioco, piattaforma, stato) {
     messaggio: "Gioco aggiunto alla libreria!",
   };
 }
+
+function aggiornaGioco(id, modifiche) {
+  const giochi = leggiLibreria();
+
+  const indice = giochi.findIndex((gioco) => gioco.id === id);
+
+  if (indice === -1) {
+    throw new Error("Gioco non trovato nella libreria.");
+  }
+
+  giochi[indice] = {
+    ...giochi[indice],
+    ...modifiche,
+    id: giochi[indice].id,
+  };
+
+  salvaLibreria(giochi);
+}
+
+function eliminaDallaLibreria(id) {
+  const giochi = leggiLibreria();
+
+  const aggiornati = giochi.filter((gioco) => gioco.id !== id);
+
+  salvaLibreria(aggiornati);
+}

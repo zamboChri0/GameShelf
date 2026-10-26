@@ -293,3 +293,29 @@
 #lista-libreria {
   margin-top: 24px;
 }
+
+/* Controlli della libreria */
+
+.form-aggiunta .opzione-platino {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+}
+
+.opzione-platino input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: #a78bfa;
+}
+
+.form-aggiunta .pulsante-elimina {
+  background: transparent;
+  border: 1px solid #fb7185;
+  color: #fda4af;
+}
+
+.form-aggiunta .pulsante-elimina:hover {
+  background: #3b1825;
+}
