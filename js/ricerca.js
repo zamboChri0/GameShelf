@@ -91,7 +91,84 @@ function creaSchedaGioco(gioco) {
   const piattaforme = document.createElement("p");
   piattaforme.textContent =
     `Piattaforme: ${(gioco.platforms || []).join(", ") || "Non disponibili"}`;
-  scheda.appendChild(piattaforme);
+
+      scheda.appendChild(piattaforme);
+
+  const formAggiunta = document.createElement("form");
+  formAggiunta.className = "form-aggiunta";
+
+  // Scelta della piattaforma
+  const labelPiattaforma = document.createElement("label");
+  labelPiattaforma.textContent = "La tua piattaforma";
+
+  const selectPiattaforma = document.createElement("select");
+  selectPiattaforma.required = true;
+
+  const piattaformeDisponibili = gioco.platforms?.length
+    ? gioco.platforms
+    : ["PC", "PlayStation 5", "PlayStation 4", "Xbox", "Nintendo Switch"];
+
+  piattaformeDisponibili.forEach((nome) => {
+    const opzione = document.createElement("option");
+    opzione.value = nome;
+    opzione.textContent = nome;
+    selectPiattaforma.appendChild(opzione);
+  });
+
+  labelPiattaforma.appendChild(selectPiattaforma);
+
+  // Scelta dello stato
+  const labelStato = document.createElement("label");
+  labelStato.textContent = "Stato del gioco";
+
+  const selectStato = document.createElement("select");
+
+  ["Da iniziare", "In corso", "Finito", "Abbandonato"].forEach((stato) => {
+    const opzione = document.createElement("option");
+    opzione.value = stato;
+    opzione.textContent = stato;
+    selectStato.appendChild(opzione);
+  });
+
+  labelStato.appendChild(selectStato);
+
+  // Pulsante e messaggio di conferma
+  const pulsanteAggiungi = document.createElement("button");
+  pulsanteAggiungi.type = "submit";
+  pulsanteAggiungi.textContent = "Aggiungi alla libreria";
+
+  const messaggio = document.createElement("p");
+  messaggio.className = "messaggio-aggiunta";
+  messaggio.setAttribute("role", "status");
+
+  formAggiunta.addEventListener("submit", (evento) => {
+    evento.preventDefault();
+
+    try {
+      const risultato = aggiungiAllaLibreria(
+        gioco,
+        selectPiattaforma.value,
+        selectStato.value
+      );
+
+      messaggio.textContent = risultato.messaggio;
+    } catch (errore) {
+      console.error("Errore nel salvataggio:", errore);
+
+      messaggio.textContent =
+        "Impossibile salvare il gioco. Controlla che il browser consenta il salvataggio dei dati.";
+    }
+  });
+
+  formAggiunta.append(
+    labelPiattaforma,
+    labelStato,
+    pulsanteAggiungi,
+    messaggio
+  );
+
+  scheda.appendChild(formAggiunta);
 
   return scheda;
 }
+
