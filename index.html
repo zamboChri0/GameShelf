@@ -9,7 +9,7 @@
   >
   <title>GameShelf — La mia libreria gaming</title>
 
-  <link rel="stylesheet" href="css/style.css?v=7">
+  <link rel="stylesheet" href="css/style.css?v=8">
 
 </head>
 
@@ -96,6 +96,56 @@
 
       <p id="messaggio-libreria" role="status"></p>
 
+      <div class="filtri-libreria">
+  <label class="ricerca-libreria">
+    Cerca nella tua libreria
+    <input
+      type="search"
+      id="ricerca-libreria"
+      placeholder="Scrivi il titolo di un gioco..."
+    >
+  </label>
+
+  <div class="riga-filtri">
+    <label>
+      Stato
+      <select id="filtro-stato">
+        <option value="">Tutti gli stati</option>
+        <option value="Da iniziare">Da iniziare</option>
+        <option value="In corso">In corso</option>
+        <option value="Finito">Finito</option>
+        <option value="Abbandonato">Abbandonato</option>
+      </select>
+    </label>
+
+    <label>
+      Piattaforma
+      <select id="filtro-piattaforma">
+        <option value="">Tutte le piattaforme</option>
+      </select>
+    </label>
+
+    <label>
+      Ordina per
+      <select id="ordine-libreria">
+        <option value="recenti">Ultimi aggiunti</option>
+        <option value="titolo">Titolo A–Z</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="azioni-filtri">
+    <label class="filtro-platino">
+      <input type="checkbox" id="filtro-platino">
+      Solo platinati
+    </label>
+
+    <button type="button" id="azzera-filtri">
+      Azzera filtri
+    </button>
+  </div>
+</div>
+
       <div id="lista-libreria" class="griglia"></div>
     </section>
 
@@ -107,8 +157,9 @@
   </footer>
 
   <script src="js/storage.js?v=3"></script>
-<script src="js/libreria.js?v=4"></script>
-<script src="js/ricerca.js?v=3"></script>
+  <script src="js/libreria.js?v=5"></script>
+  <script src="js/ricerca.js?v=3"></script>
+
 
 
 </body>

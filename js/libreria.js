@@ -1,11 +1,69 @@
 const listaLibreria = document.getElementById("lista-libreria");
 const messaggioLibreria = document.getElementById("messaggio-libreria");
 
+const ricercaLibreria = document.getElementById("ricerca-libreria");
+const filtroStato = document.getElementById("filtro-stato");
+const filtroPiattaforma = document.getElementById("filtro-piattaforma");
+const filtroPlatino = document.getElementById("filtro-platino");
+const ordineLibreria = document.getElementById("ordine-libreria");
+const azzeraFiltri = document.getElementById("azzera-filtri");
+
+messaggioLibreria.setAttribute("role", "status");
+
+ricercaLibreria.addEventListener("input", mostraLibreria);
+
+[
+  filtroStato,
+  filtroPiattaforma,
+  filtroPlatino,
+  ordineLibreria,
+].forEach((controllo) => {
+  controllo.addEventListener("change", mostraLibreria);
+});
+
+azzeraFiltri.addEventListener("click", () => {
+  ricercaLibreria.value = "";
+  filtroStato.value = "";
+  filtroPiattaforma.value = "";
+  filtroPlatino.checked = false;
+  ordineLibreria.value = "recenti";
+
+  mostraLibreria();
+});
+
+function aggiornaFiltroPiattaforme(giochi) {
+  const selezionata = filtroPiattaforma.value;
+
+  const piattaforme = [
+    ...new Set(
+      giochi
+        .map((gioco) => gioco.piattaforma)
+        .filter(Boolean)
+    ),
+  ].sort((a, b) => a.localeCompare(b, "it"));
+
+  filtroPiattaforma.replaceChildren(
+    new Option("Tutte le piattaforme", "")
+  );
+
+  piattaforme.forEach((piattaforma) => {
+    filtroPiattaforma.add(
+      new Option(piattaforma, piattaforma)
+    );
+  });
+
+  if (piattaforme.includes(selezionata)) {
+    filtroPiattaforma.value = selezionata;
+  }
+}
+
 function mostraLibreria() {
   listaLibreria.replaceChildren();
 
   try {
     const giochi = leggiLibreria();
+
+    aggiornaFiltroPiattaforme(giochi);
 
     if (giochi.length === 0) {
       messaggioLibreria.textContent =
@@ -13,12 +71,70 @@ function mostraLibreria() {
       return;
     }
 
-    messaggioLibreria.textContent =
-      `Giochi nella libreria: ${giochi.length}.`;
+    const testo = ricercaLibreria.value
+      .trim()
+      .toLocaleLowerCase("it");
 
-    [...giochi].reverse().forEach((gioco) => {
-      listaLibreria.appendChild(creaSchedaLibreria(gioco));
+    const filtrati = giochi.filter((gioco) => {
+      const corrispondeTitolo = String(gioco.nome ?? "")
+        .toLocaleLowerCase("it")
+        .includes(testo);
+
+      const corrispondeStato =
+        filtroStato.value === "" ||
+        gioco.stato === filtroStato.value;
+
+      const corrispondePiattaforma =
+        filtroPiattaforma.value === "" ||
+        gioco.piattaforma === filtroPiattaforma.value;
+
+      const corrispondePlatino =
+        !filtroPlatino.checked ||
+        (
+          /playstation/i.test(gioco.piattaforma) &&
+          gioco.platino === true
+        );
+
+      return (
+        corrispondeTitolo &&
+        corrispondeStato &&
+        corrispondePiattaforma &&
+        corrispondePlatino
+      );
     });
+
+    if (ordineLibreria.value === "titolo") {
+      filtrati.sort((a, b) =>
+        String(a.nome ?? "").localeCompare(
+          String(b.nome ?? ""),
+          "it",
+          { sensitivity: "base", numeric: true }
+        )
+      );
+    } else {
+      filtrati.reverse();
+    }
+
+    messaggioLibreria.textContent =
+      `Giochi mostrati: ${filtrati.length} su ${giochi.length}.`;
+
+    if (filtrati.length === 0) {
+      const messaggioVuoto = document.createElement("p");
+      messaggioVuoto.className = "libreria-nessun-risultato";
+      messaggioVuoto.textContent =
+        "Nessun gioco corrisponde ai filtri. Prova a cambiarli o ad azzerarli.";
+
+      listaLibreria.appendChild(messaggioVuoto);
+      return;
+    }
+
+    const frammento = document.createDocumentFragment();
+
+    filtrati.forEach((gioco) => {
+      frammento.appendChild(creaSchedaLibreria(gioco));
+    });
+
+    listaLibreria.appendChild(frammento);
   } catch (errore) {
     console.error("Errore nel caricamento della libreria:", errore);
 

@@ -656,3 +656,116 @@
     transform: none;
   }
 }
+/* Ricerca e filtri della libreria */
+
+.filtri-libreria {
+  display: grid;
+  gap: 16px;
+  margin: 20px 0 24px;
+  padding: 20px;
+  background: #121829;
+  border: 1px solid #2c354b;
+  border-radius: 16px;
+}
+
+.filtri-libreria label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  color: #b7c0d5;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.filtri-libreria input[type="search"],
+.filtri-libreria select {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  margin: 0;
+  padding: 11px 12px;
+  background: #1a2236;
+  border: 1px solid #38445f;
+  border-radius: 10px;
+  color: #f0f2f8;
+  font: inherit;
+}
+
+.filtri-libreria input[type="search"]::placeholder {
+  color: #939fb8;
+}
+
+.filtri-libreria input:focus-visible,
+.filtri-libreria select:focus-visible,
+.filtri-libreria button:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 3px;
+}
+
+.riga-filtri {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.azioni-filtri {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.filtri-libreria .filtro-platino {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.filtro-platino input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #a78bfa;
+}
+
+#azzera-filtri {
+  width: auto;
+  margin: 0;
+  padding: 9px 13px;
+  background: transparent;
+  border: 1px solid #414b68;
+  border-radius: 9px;
+  color: #d8d1f8;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+#azzera-filtri:hover {
+  background: #242b40;
+  border-color: #a78bfa;
+}
+
+.libreria-nessun-risultato {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 28px 20px;
+  border: 1px dashed #414b68;
+  border-radius: 14px;
+  color: #b7c0d5;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .riga-filtri {
+    grid-template-columns: 1fr;
+  }
+
+  .filtri-libreria {
+    padding: 16px;
+  }
+}
