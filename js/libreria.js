@@ -370,6 +370,35 @@ function creaSchedaLibreria(gioco) {
     valutazione,
     badges
   );
+  if (gioco.dataInizio || gioco.dataFine) {
+    const date = document.createElement("div");
+    date.className = "date-scheda";
+
+    function aggiungiData(etichetta, valore) {
+      if (!valore) {
+        return;
+      }
+
+      const riga = document.createElement("p");
+
+      const nome = document.createElement("span");
+      nome.textContent = etichetta;
+
+      const data = document.createElement("time");
+      data.dateTime = valore;
+
+      const [anno, mese, giorno] = valore.split("-");
+      data.textContent = `${giorno}/${mese}/${anno}`;
+
+      riga.append(nome, data);
+      date.appendChild(riga);
+    }
+
+    aggiungiData("Inizio", gioco.dataInizio);
+    aggiungiData("Fine", gioco.dataFine);
+
+    scheda.appendChild(date);
+  }
 
   return scheda;
 }

@@ -1015,3 +1015,33 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Date sulle schede della libreria */
+
+#lista-libreria .date-scheda {
+  display: grid;
+  gap: 8px;
+  margin: 0 18px 18px;
+  padding-top: 14px;
+  border-top: 1px solid #2c354b;
+}
+
+#lista-libreria .date-scheda p {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+#lista-libreria .date-scheda span {
+  color: #99a5bd;
+}
+
+#lista-libreria .date-scheda time {
+  color: #e0e5f0;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
