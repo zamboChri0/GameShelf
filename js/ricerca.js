@@ -123,7 +123,7 @@ function creaSchedaGioco(gioco) {
 
   const selectStato = document.createElement("select");
 
-  ["Da iniziare", "In corso", "Finito", "Abbandonato"].forEach((stato) => {
+  ["Da iniziare", "In corso", "In pausa", "Finito", "Abbandonato"].forEach((stato) => {
     const opzione = document.createElement("option");
     opzione.value = stato;
     opzione.textContent = stato;

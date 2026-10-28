@@ -249,9 +249,11 @@ function creaSchedaLibreria(gioco) {
   const classiStato = {
     "Da iniziare": "stato-da-iniziare",
     "In corso": "stato-in-corso",
+    "In pausa": "stato-in-pausa",
     "Finito": "stato-finito",
     "Abbandonato": "stato-abbandonato",
   };
+
 
   badgeStato.classList.add(classiStato[gioco.stato] || "stato-da-iniziare");
   badgeStato.textContent = gioco.stato;
@@ -311,7 +313,7 @@ function apriModificaGioco(gioco) {
 
   const selectStato = document.createElement("select");
 
-  ["Da iniziare", "In corso", "Finito", "Abbandonato"].forEach((stato) => {
+  ["Da iniziare", "In corso", "In pausa", "Finito", "Abbandonato"].forEach((stato) => {
     const opzione = document.createElement("option");
     opzione.value = stato;
     opzione.textContent = stato;

@@ -14,9 +14,11 @@ function validaGiochiBackup(giochi) {
     const stati = [
         "Da iniziare",
         "In corso",
+        "In pausa",
         "Finito",
         "Abbandonato",
     ];
+
 
     const testoNonVuoto = (valore) =>
         typeof valore === "string" && valore.trim().length > 0;

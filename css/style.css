@@ -898,3 +898,12 @@
   white-space: nowrap;
   border: 0;
 }
+
+/* Stato: In pausa */
+
+.stato-in-pausa {
+  background: #2e1d47;
+  border-color: #70529b;
+  color: #d8b4fe;
+}
+
