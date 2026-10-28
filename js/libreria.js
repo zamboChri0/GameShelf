@@ -143,11 +143,67 @@ function mostraLibreria() {
   }
 }
 
+function creaVisualizzazioneVoto(voto) {
+  const contenitore = document.createElement("div");
+  contenitore.className = "valutazione-gioco";
+
+  if (voto === null || voto === undefined) {
+    contenitore.classList.add("valutazione-assente");
+    contenitore.textContent = "Non valutato";
+    return contenitore;
+  }
+
+  if (!votoValido(voto)) {
+    contenitore.textContent = "Voto da aggiornare";
+    return contenitore;
+  }
+
+  const stelle = document.createElement("span");
+  stelle.className = "stelle-voto";
+  stelle.setAttribute("aria-hidden", "true");
+
+  for (let posizione = 1; posizione <= 5; posizione++) {
+    const stella = document.createElement("span");
+    stella.className = "stella-voto";
+
+    const sfondo = document.createElement("span");
+    sfondo.className = "stella-sfondo";
+    sfondo.textContent = "★";
+
+    const riempimento = document.createElement("span");
+    riempimento.className = "stella-riempimento";
+    riempimento.textContent = "★";
+
+    const frazione = Math.max(
+      0,
+      Math.min(1, voto - (posizione - 1))
+    );
+
+    riempimento.style.width = `${frazione * 100}%`;
+
+    stella.append(sfondo, riempimento);
+    stelle.appendChild(stella);
+  }
+
+  const testo = document.createElement("span");
+  testo.className = "numero-voto";
+  testo.textContent = `${formattaVoto(voto)}/5`;
+
+  const descrizione = document.createElement("span");
+  descrizione.className = "solo-lettori-schermo";
+  descrizione.textContent = "Voto personale: ";
+
+  contenitore.append(descrizione, stelle, testo);
+
+  return contenitore;
+}
+
+
 function creaSchedaLibreria(gioco) {
   const scheda = document.createElement("article");
   scheda.className = "scheda scheda-gioco";
 
-    if (gioco.immagine) {
+  if (gioco.immagine) {
     const contenitoreImmagine = document.createElement("div");
     contenitoreImmagine.className = "contenitore-immagine";
 
@@ -165,7 +221,7 @@ function creaSchedaLibreria(gioco) {
   }
 
 
-    const intestazione = document.createElement("div");
+  const intestazione = document.createElement("div");
   intestazione.className = "intestazione-scheda";
 
   const titolo = document.createElement("h3");
@@ -217,7 +273,14 @@ function creaSchedaLibreria(gioco) {
     badges.appendChild(badgePlatino);
   }
 
-  scheda.append(intestazione, piattaforma, badges);
+  const valutazione = creaVisualizzazioneVoto(gioco.voto);
+
+  scheda.append(
+    intestazione,
+    piattaforma,
+    valutazione,
+    badges
+  );
 
   return scheda;
 }
@@ -275,6 +338,55 @@ function apriModificaGioco(gioco) {
 
   labelPlatino.append(checkboxPlatino, testoPlatino);
 
+  const labelVoto = document.createElement("label");
+  labelVoto.textContent = "Voto personale";
+
+  const selectVoto = document.createElement("select");
+
+  selectVoto.add(new Option("Non valutato", ""));
+
+  for (let mezzoPunto = 2; mezzoPunto <= 10; mezzoPunto++) {
+    const valore = mezzoPunto / 2;
+
+    selectVoto.add(
+      new Option(
+        `${formattaVoto(valore)} / 5`,
+        String(valore)
+      )
+    );
+  }
+
+  selectVoto.value =
+    gioco.voto !== null &&
+      gioco.voto !== undefined &&
+      votoValido(gioco.voto)
+      ? String(gioco.voto)
+      : "";
+
+  labelVoto.appendChild(selectVoto);
+
+  const anteprimaVoto = document.createElement("div");
+  anteprimaVoto.className = "anteprima-voto";
+  anteprimaVoto.setAttribute("role", "status");
+
+  function aggiornaAnteprimaVoto() {
+    const voto = selectVoto.value === ""
+      ? null
+      : Number(selectVoto.value);
+
+    anteprimaVoto.replaceChildren(
+      creaVisualizzazioneVoto(voto)
+    );
+  }
+
+  selectVoto.addEventListener(
+    "change",
+    aggiornaAnteprimaVoto
+  );
+
+  aggiornaAnteprimaVoto();
+
+
   const messaggio = document.createElement("p");
   messaggio.className = "messaggio-aggiunta";
   messaggio.setAttribute("role", "status");
@@ -295,7 +407,11 @@ function apriModificaGioco(gioco) {
       aggiornaGioco(gioco.id, {
         stato: selectStato.value,
         platino: supportaPlatino && checkboxPlatino.checked,
+        voto: selectVoto.value === ""
+          ? null
+          : Number(selectVoto.value),
       });
+
 
       chiudiModifica();
       mostraLibreria();
@@ -348,7 +464,15 @@ function apriModificaGioco(gioco) {
     }
   });
 
-  form.append(labelStato, labelPlatino, pulsanteSalva, pulsanteAnnulla, messaggio);
+  form.append(
+    labelStato,
+    labelPlatino,
+    labelVoto,
+    anteprimaVoto,
+    pulsanteSalva,
+    pulsanteAnnulla,
+    messaggio
+  );
 
   finestra.append(titolo, piattaforma, form, pulsanteElimina);
   overlay.appendChild(finestra);

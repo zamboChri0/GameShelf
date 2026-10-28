@@ -60,6 +60,15 @@ function aggiungiAllaLibreria(gioco, piattaforma, stato) {
 }
 
 function aggiornaGioco(id, modifiche) {
+    if (
+    Object.prototype.hasOwnProperty.call(modifiche, "voto") &&
+    !votoValido(modifiche.voto)
+  ) {
+    throw new Error(
+      "Il voto deve essere da 1 a 5, con incrementi di 0,5."
+    );
+  }
+
   const giochi = leggiLibreria();
 
   const indice = giochi.findIndex((gioco) => gioco.id === id);
@@ -83,4 +92,23 @@ function eliminaDallaLibreria(id) {
   const aggiornati = giochi.filter((gioco) => gioco.id !== id);
 
   salvaLibreria(aggiornati);
+}
+
+function votoValido(voto) {
+  return (
+    voto === null ||
+    (
+      typeof voto === "number" &&
+      Number.isFinite(voto) &&
+      voto >= 1 &&
+      voto <= 5 &&
+      Number.isInteger(voto * 2)
+    )
+  );
+}
+
+function formattaVoto(voto) {
+  return voto.toLocaleString("it-IT", {
+    maximumFractionDigits: 1,
+  });
 }
