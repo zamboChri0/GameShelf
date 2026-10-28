@@ -364,12 +364,45 @@ function creaSchedaLibreria(gioco) {
 
   const valutazione = creaVisualizzazioneVoto(gioco.voto);
 
+    const runCorrente = gioco.runs.find(
+    (run) => run.id === gioco.runCorrenteId
+  );
+
+  const riepilogoRun = document.createElement("p");
+  riepilogoRun.className = "riepilogo-run";
+
+  const completate = gioco.runs.filter(
+    (run) => run.stato === "Finito"
+  ).length;
+
+  riepilogoRun.textContent =
+    `Run ${runCorrente.numero} · ` +
+    `${gioco.runs.length} totali · ` +
+    `${completate} completate`;
+
+  const pulsanteRun = document.createElement("button");
+  pulsanteRun.type = "button";
+  pulsanteRun.className = "pulsante-dettagli-run";
+  pulsanteRun.dataset.giocoId = gioco.id;
+  pulsanteRun.textContent = "Dettagli e run";
+  pulsanteRun.setAttribute(
+    "aria-label",
+    `Dettagli e run di ${gioco.nome}`
+  );
+
+  pulsanteRun.addEventListener("click", () => {
+    apriDettagliRun(gioco.id);
+  });
+
   scheda.append(
     intestazione,
     piattaforma,
     valutazione,
-    badges
+    badges,
+    riepilogoRun,
+    pulsanteRun
   );
+
 
   return scheda;
 }
