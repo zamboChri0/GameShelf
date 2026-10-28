@@ -48,7 +48,10 @@ function aggiungiAllaLibreria(gioco, piattaforma, stato) {
     preferito: false,
     voto: null,
     note: "",
+    dataInizio: null,
+    dataFine: null,
     aggiuntoIl: new Date().toISOString(),
+
   };
 
   giochi.push(nuovoGioco);
@@ -85,13 +88,34 @@ function aggiornaGioco(id, modifiche) {
     throw new Error("Gioco non trovato nella libreria.");
   }
 
-  giochi[indice] = {
+  const aggiornato = {
     ...giochi[indice],
     ...modifiche,
     id: giochi[indice].id,
   };
 
+  const inizio = aggiornato.dataInizio === undefined
+    ? null
+    : aggiornato.dataInizio;
+
+  const fine = aggiornato.dataFine === undefined
+    ? null
+    : aggiornato.dataFine;
+
+  if (!dateGiocoValide(inizio, fine)) {
+    throw new Error(
+      "Controlla le date: devono essere valide e la fine " +
+      "non può precedere l'inizio."
+    );
+  }
+
+  aggiornato.dataInizio = inizio;
+  aggiornato.dataFine = fine;
+
+  giochi[indice] = aggiornato;
+
   salvaLibreria(giochi);
+
 }
 
 function eliminaDallaLibreria(id) {
@@ -119,4 +143,38 @@ function formattaVoto(voto) {
   return voto.toLocaleString("it-IT", {
     maximumFractionDigits: 1,
   });
+}
+
+
+function dataGiocoValida(valore) {
+  if (valore === null) {
+    return true;
+  }
+
+  if (
+    typeof valore !== "string" ||
+    !/^\d{4}-\d{2}-\d{2}$/.test(valore) ||
+    valore.startsWith("0000-")
+  ) {
+    return false;
+  }
+
+  const data = new Date(`${valore}T00:00:00.000Z`);
+
+  return (
+    Number.isFinite(data.getTime()) &&
+    data.toISOString().slice(0, 10) === valore
+  );
+}
+
+function dateGiocoValide(inizio, fine) {
+  return (
+    dataGiocoValida(inizio) &&
+    dataGiocoValida(fine) &&
+    (
+      inizio === null ||
+      fine === null ||
+      fine >= inizio
+    )
+  );
 }

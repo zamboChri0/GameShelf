@@ -475,6 +475,49 @@ function apriModificaGioco(gioco) {
 
   aggiornaAnteprimaVoto();
 
+    const campiDate = document.createElement("div");
+  campiDate.className = "campi-date-gioco";
+
+  const labelInizio = document.createElement("label");
+  labelInizio.textContent = "Data di inizio";
+
+  const inputInizio = document.createElement("input");
+  inputInizio.type = "date";
+  inputInizio.min = "0001-01-01";
+  inputInizio.max = "9999-12-31";
+  inputInizio.value = gioco.dataInizio ?? "";
+
+  labelInizio.appendChild(inputInizio);
+
+  const labelFine = document.createElement("label");
+  labelFine.textContent = "Data di fine";
+
+  const inputFine = document.createElement("input");
+  inputFine.type = "date";
+  inputFine.min = "0001-01-01";
+  inputFine.max = "9999-12-31";
+  inputFine.value = gioco.dataFine ?? "";
+
+  labelFine.appendChild(inputFine);
+
+  function aggiornaLimitiDate() {
+    inputFine.min = inputInizio.value || "0001-01-01";
+    inputInizio.max = inputFine.value || "9999-12-31";
+  }
+
+  inputInizio.addEventListener("input", aggiornaLimitiDate);
+  inputFine.addEventListener("input", aggiornaLimitiDate);
+
+  aggiornaLimitiDate();
+
+  campiDate.append(labelInizio, labelFine);
+
+  const aiutoDate = document.createElement("p");
+  aiutoDate.className = "aiuto-date";
+  aiutoDate.textContent =
+    "Date facoltative: puoi lasciare vuota quella che non ricordi.";
+
+
 
   const messaggio = document.createElement("p");
   messaggio.className = "messaggio-aggiunta";
@@ -499,14 +542,19 @@ function apriModificaGioco(gioco) {
         voto: selectVoto.value === ""
           ? null
           : Number(selectVoto.value),
+        dataInizio: inputInizio.value || null,
+        dataFine: inputFine.value || null,
       });
+
 
 
       chiudiModifica();
       mostraLibreria();
     } catch (errore) {
       console.error("Errore nell'aggiornamento:", errore);
-      messaggio.textContent = "Impossibile salvare le modifiche.";
+      messaggio.textContent =
+        errore.message || "Impossibile salvare le modifiche.";
+
     }
   });
 

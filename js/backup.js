@@ -62,7 +62,16 @@ function validaGiochiBackup(giochi) {
             votoValido(gioco.voto) &&
 
             typeof gioco.note === "string" &&
+            dateGiocoValide(
+                gioco.dataInizio === undefined
+                    ? null
+                    : gioco.dataInizio,
+                gioco.dataFine === undefined
+                    ? null
+                    : gioco.dataFine
+            ) &&
             dataValida(gioco.aggiuntoIl);
+
 
         if (!valido) {
             throw new Error(
