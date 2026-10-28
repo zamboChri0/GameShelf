@@ -54,6 +54,11 @@ function validaGiochiBackup(giochi) {
             testoNonVuoto(gioco.piattaforma) &&
             stati.includes(gioco.stato) &&
             typeof gioco.platino === "boolean" &&
+            (
+                !Object.prototype.hasOwnProperty.call(gioco, "preferito") ||
+                typeof gioco.preferito === "boolean"
+            ) &&
+
             votoValido(gioco.voto) &&
 
             typeof gioco.note === "string" &&

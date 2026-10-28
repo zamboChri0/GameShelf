@@ -7,6 +7,8 @@ const filtroPiattaforma = document.getElementById("filtro-piattaforma");
 const filtroPlatino = document.getElementById("filtro-platino");
 const ordineLibreria = document.getElementById("ordine-libreria");
 const azzeraFiltri = document.getElementById("azzera-filtri");
+const filtroPreferiti = document.getElementById("filtro-preferiti");
+
 
 messaggioLibreria.setAttribute("role", "status");
 
@@ -16,8 +18,10 @@ ricercaLibreria.addEventListener("input", mostraLibreria);
   filtroStato,
   filtroPiattaforma,
   filtroPlatino,
+  filtroPreferiti,
   ordineLibreria,
 ].forEach((controllo) => {
+
   controllo.addEventListener("change", mostraLibreria);
 });
 
@@ -26,6 +30,7 @@ azzeraFiltri.addEventListener("click", () => {
   filtroStato.value = "";
   filtroPiattaforma.value = "";
   filtroPlatino.checked = false;
+  filtroPreferiti.checked = false;
   ordineLibreria.value = "recenti";
 
   mostraLibreria();
@@ -95,12 +100,18 @@ function mostraLibreria() {
           gioco.platino === true
         );
 
+      const corrispondePreferito =
+        !filtroPreferiti.checked ||
+        gioco.preferito === true;
+
       return (
         corrispondeTitolo &&
         corrispondeStato &&
         corrispondePiattaforma &&
-        corrispondePlatino
+        corrispondePlatino &&
+        corrispondePreferito
       );
+
     });
 
     if (ordineLibreria.value === "titolo") {
@@ -237,7 +248,83 @@ function creaSchedaLibreria(gioco) {
     apriModificaGioco(gioco);
   });
 
-  intestazione.append(titolo, pulsanteModifica);
+  const pulsantePreferito = document.createElement("button");
+  pulsantePreferito.type = "button";
+  pulsantePreferito.className = "pulsante-preferito";
+  pulsantePreferito.dataset.giocoId = gioco.id;
+
+  const preferito = gioco.preferito === true;
+
+  pulsantePreferito.classList.toggle("attivo", preferito);
+  pulsantePreferito.setAttribute(
+    "aria-pressed",
+    String(preferito)
+  );
+  pulsantePreferito.setAttribute(
+    "aria-label",
+    `Preferito: ${gioco.nome}`
+  );
+  pulsantePreferito.title = preferito
+    ? "Rimuovi dai preferiti"
+    : "Aggiungi ai preferiti";
+
+  const iconaCuore = document.createElement("span");
+  iconaCuore.setAttribute("aria-hidden", "true");
+  iconaCuore.textContent = preferito ? "♥" : "♡";
+
+  pulsantePreferito.appendChild(iconaCuore);
+
+  pulsantePreferito.addEventListener("click", () => {
+    try {
+      const attuale = leggiLibreria().find(
+        (elemento) => elemento.id === gioco.id
+      );
+
+      if (!attuale) {
+        throw new Error("Gioco non trovato.");
+      }
+
+      const nuovoValore = attuale.preferito !== true;
+
+      aggiornaGioco(gioco.id, {
+        preferito: nuovoValore,
+      });
+
+      mostraLibreria();
+
+      const nuovoPulsante = [
+        ...listaLibreria.querySelectorAll(".pulsante-preferito"),
+      ].find(
+        (pulsante) => pulsante.dataset.giocoId === gioco.id
+      );
+
+      if (nuovoPulsante) {
+        nuovoPulsante.focus({ preventScroll: true });
+      } else {
+        filtroPreferiti.focus({ preventScroll: true });
+      }
+
+      messaggioLibreria.textContent += nuovoValore
+        ? " Gioco aggiunto ai preferiti."
+        : " Gioco rimosso dai preferiti.";
+    } catch (errore) {
+      console.error("Errore preferiti:", errore);
+
+      messaggioLibreria.textContent =
+        "Impossibile aggiornare il preferito. Riprova.";
+    }
+  });
+
+  const azioniScheda = document.createElement("div");
+  azioniScheda.className = "azioni-scheda";
+
+  azioniScheda.append(
+    pulsantePreferito,
+    pulsanteModifica
+  );
+
+  intestazione.append(titolo, azioniScheda);
+
 
   const piattaforma = document.createElement("p");
   piattaforma.className = "piattaforma-gioco";

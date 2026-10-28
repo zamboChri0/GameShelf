@@ -907,3 +907,60 @@
   color: #d8b4fe;
 }
 
+/* Preferiti */
+
+#lista-libreria .azioni-scheda {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+#lista-libreria .pulsante-preferito {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  margin: 0;
+  padding: 0;
+  background: #242b40;
+  border: 1px solid #414b68;
+  border-radius: 10px;
+  color: #b7c0d5;
+  font-family: Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+#lista-libreria .pulsante-preferito:hover {
+  background: #392638;
+  border-color: #f28baa;
+  color: #f9a8c3;
+}
+
+#lista-libreria .pulsante-preferito.attivo {
+  background: #3d2033;
+  border-color: #bd527c;
+  color: #fb8fba;
+}
+
+#lista-libreria .pulsante-preferito:focus-visible {
+  outline: 2px solid #f9a8c3;
+  outline-offset: 3px;
+}
+
+.filtri-libreria .filtro-preferiti {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.filtro-preferiti input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #ed80ab;
+}

@@ -45,6 +45,7 @@ function aggiungiAllaLibreria(gioco, piattaforma, stato) {
     piattaforma,
     stato,
     platino: false,
+    preferito: false,
     voto: null,
     note: "",
     aggiuntoIl: new Date().toISOString(),
@@ -60,6 +61,13 @@ function aggiungiAllaLibreria(gioco, piattaforma, stato) {
 }
 
 function aggiornaGioco(id, modifiche) {
+    if (
+    Object.prototype.hasOwnProperty.call(modifiche, "preferito") &&
+    typeof modifiche.preferito !== "boolean"
+  ) {
+    throw new Error("Il valore del preferito non è valido.");
+  }
+
     if (
     Object.prototype.hasOwnProperty.call(modifiche, "voto") &&
     !votoValido(modifiche.voto)
