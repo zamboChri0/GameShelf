@@ -786,3 +786,47 @@
     .crediti-icone a:hover {
       color: #ddd6fe;
     }
+
+    /* Backup della libreria */
+
+    .strumenti-backup {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 20px 0 0;
+    }
+
+    .strumenti-backup button {
+      width: auto;
+      margin: 0;
+      padding: 10px 14px;
+      background: #242b40;
+      border: 1px solid #414b68;
+      border-radius: 10px;
+      color: #ddd6fe;
+      font: inherit;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .strumenti-backup button:hover {
+      background: #343052;
+      border-color: #a78bfa;
+    }
+
+    .strumenti-backup button:focus-visible {
+      outline: 2px solid #c4b5fd;
+      outline-offset: 3px;
+    }
+
+    .strumenti-backup button:disabled {
+      opacity: 0.5;
+      cursor: wait;
+    }
+
+    #messaggio-backup {
+      margin: 10px 0;
+      color: #b7c0d5;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
