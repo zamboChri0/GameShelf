@@ -83,32 +83,68 @@ function validaGiochiBackup(giochi) {
         combinazioni.add(combinazione);
     });
 
-    return giochi;
+    return normalizzaLibreriaRun(giochi);
+
 }
 
 function leggiFileBackup(testo) {
-    let backup;
+  let backup;
 
-    try {
-        backup = JSON.parse(testo.replace(/^\uFEFF/, ""));
-    } catch {
-        throw new Error("Il file non contiene un JSON valido.");
+  try {
+    backup = JSON.parse(testo.replace(/^\uFEFF/, ""));
+  } catch {
+    throw new Error("Il file non contiene un JSON valido.");
+  }
+
+  if (
+    backup === null ||
+    typeof backup !== "object" ||
+    Array.isArray(backup) ||
+    backup.app !== "GameShelf" ||
+    ![1, 2].includes(backup.versione) ||
+    !Array.isArray(backup.giochi)
+  ) {
+    throw new Error(
+      "Il file non è un backup GameShelf supportato."
+    );
+  }
+
+  const campiRun = ["versioneRun", "runs", "runCorrenteId"];
+
+  backup.giochi.forEach((gioco) => {
+    if (
+      !gioco ||
+      typeof gioco !== "object" ||
+      Array.isArray(gioco)
+    ) {
+      throw new Error("Il backup contiene un gioco non valido.");
+    }
+
+    const haCampo = (campo) =>
+      Object.prototype.hasOwnProperty.call(gioco, campo);
+
+    if (
+      backup.versione === 1 &&
+      campiRun.some(haCampo)
+    ) {
+      throw new Error(
+        "Il contenuto non corrisponde al formato backup 1."
+      );
     }
 
     if (
-        backup === null ||
-        typeof backup !== "object" ||
-        Array.isArray(backup) ||
-        backup.app !== "GameShelf" ||
-        backup.versione !== 1
+      backup.versione === 2 &&
+      !campiRun.every(haCampo)
     ) {
-        throw new Error(
-            "Il file non è un backup GameShelf supportato."
-        );
+      throw new Error(
+        "Nel backup 2 mancano i dati delle run."
+      );
     }
+  });
 
-    return validaGiochiBackup(backup.giochi);
+  return validaGiochiBackup(backup.giochi);
 }
+
 
 pulsanteEsporta.addEventListener("click", () => {
     messaggioBackup.textContent = "";
@@ -119,7 +155,7 @@ pulsanteEsporta.addEventListener("click", () => {
 
         const backup = {
             app: "GameShelf",
-            versione: 1,
+            versione: 2,
             esportatoIl: adesso.toISOString(),
             giochi,
         };
