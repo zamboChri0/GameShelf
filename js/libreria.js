@@ -500,15 +500,7 @@ function apriModificaGioco(gioco) {
 
   labelFine.appendChild(inputFine);
 
-  function aggiornaLimitiDate() {
-    inputFine.min = inputInizio.value || "0001-01-01";
-    inputInizio.max = inputFine.value || "9999-12-31";
-  }
 
-  inputInizio.addEventListener("input", aggiornaLimitiDate);
-  inputFine.addEventListener("input", aggiornaLimitiDate);
-
-  aggiornaLimitiDate();
 
   campiDate.append(labelInizio, labelFine);
 
@@ -606,10 +598,13 @@ function apriModificaGioco(gioco) {
     labelPlatino,
     labelVoto,
     anteprimaVoto,
+    campiDate,
+    aiutoDate,
     pulsanteSalva,
     pulsanteAnnulla,
     messaggio
   );
+
 
   finestra.append(titolo, piattaforma, form, pulsanteElimina);
   overlay.appendChild(finestra);
