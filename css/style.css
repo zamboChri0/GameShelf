@@ -95,677 +95,694 @@
 
     /* Ricerca dei giochi */
 
-.ricerca-giochi {
-  margin-top: 48px;
-}
-
-.ricerca-giochi > p {
-  color: #aab6cd;
-}
-
-.barra-ricerca {
-  margin-top: 24px;
-}
-
-.barra-ricerca label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.campi-ricerca {
-  display: flex;
-  gap: 12px;
-}
-
-.campi-ricerca input {
-  flex: 1;
-  min-width: 0;
-  padding: 14px 16px;
-  border: 1px solid #43516c;
-  border-radius: 10px;
-  background: #151d31;
-  color: #f1f5f9;
-  font: inherit;
-}
-
-.campi-ricerca input::placeholder {
-  color: #aab6cd;
-}
-
-.campi-ricerca button {
-  padding: 14px 24px;
-  border: none;
-  border-radius: 10px;
-  background: #a78bfa;
-  color: #0b1020;
-  font: inherit;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.campi-ricerca button:hover {
-  background: #c4b5fd;
-}
-
-.campi-ricerca button:disabled {
-  opacity: 0.6;
-  cursor: wait;
-}
-
-.campi-ricerca input:focus-visible,
-.campi-ricerca button:focus-visible,
-.crediti a:focus-visible {
-  outline: 3px solid #c4b5fd;
-  outline-offset: 3px;
-}
-
-#messaggio-ricerca {
-  min-height: 26px;
-  margin-top: 16px;
-}
-
-#risultati-ricerca {
-  margin-top: 20px;
-}
-
-.scheda-gioco {
-  min-width: 0;
-  overflow: hidden;
-  padding: 0;
-}
-
-
-.scheda-gioco img {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: 180px;
-  object-fit: cover;
-  object-position: center;
-}
-
-
-.scheda-gioco h3 {
-  margin: 18px 18px 12px;
-  font-size: 20px;
-  line-height: 1.3;
-}
-
-.scheda-gioco p {
-  margin: 0 18px 12px;
-  font-size: 14px;
-  overflow-wrap: anywhere;
-}
-
-.scheda-gioco p:last-child {
-  margin-bottom: 20px;
-}
-
-.crediti {
-  margin-top: 24px;
-  font-size: 13px;
-}
-
-.crediti a {
-  color: #c4b5fd;
-}
-
-@media (max-width: 540px) {
-  .campi-ricerca {
-    flex-direction: column;
-  }
-
-  .campi-ricerca button {
-    width: 100%;
-  }
-}
-
-/* Aggiunta di un gioco alla libreria */
-
-.form-aggiunta {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin: 20px 18px;
-}
-
-.form-aggiunta label {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.form-aggiunta select {
-  width: 100%;
-  min-width: 0;
-  padding: 10px;
-  border: 1px solid #43516c;
-  border-radius: 8px;
-  background: #0b1020;
-  color: #f1f5f9;
-  font: inherit;
-}
-
-.form-aggiunta button {
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  background: #a78bfa;
-  color: #0b1020;
-  font: inherit;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.form-aggiunta button:hover {
-  background: #c4b5fd;
-}
-
-.form-aggiunta select:focus-visible,
-.form-aggiunta button:focus-visible {
-  outline: 3px solid #c4b5fd;
-  outline-offset: 3px;
-}
-
-.scheda-gioco .messaggio-aggiunta {
-  margin: 0;
-  color: #c4b5fd;
-  font-size: 14px;
-}
-
-
-/* Libreria personale */
-
-.libreria {
-  margin-top: 56px;
-  padding-top: 32px;
-  border-top: 1px solid #263149;
-}
-
-#messaggio-libreria {
-  color: #aab6cd;
-  min-height: 26px;
-}
-
-#lista-libreria {
-  margin-top: 24px;
-}
-
-/* Controlli della libreria */
-
-.form-aggiunta .opzione-platino {
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-  font-weight: 400;
-}
-
-.opzione-platino input {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  accent-color: #a78bfa;
-}
-
-.form-aggiunta .pulsante-elimina {
-  background: transparent;
-  border: 1px solid #fb7185;
-  color: #fda4af;
-}
-
-.form-aggiunta .pulsante-elimina:hover {
-  background: #3b1825;
-}
-
-
-/* Scheda libreria */
-
-#lista-libreria {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
-  align-items: start;
-}
-
-.scheda-gioco {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  padding: 0;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.scheda-gioco:hover {
-  transform: translateY(-4px);
-  border-color: #a78bfa;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
-}
-
-.contenitore-immagine {
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
-  background: #18181b;
-}
-
-.contenitore-immagine img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.intestazione-scheda {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 14px 14px 0;
-}
-
-.intestazione-scheda h3 {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.3;
-}
-
-.pulsante-modifica {
-  flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  display: grid;
-  place-items: center;
-  background: #27272a;
-  border: 1px solid #3f3f46;
-  color: #d4d4d8;
-  border-radius: 10px;
-  font-size: 0.9rem;
-}
-
-.pulsante-modifica:hover {
-  background: #3f3f46;
-  border-color: #a78bfa;
-}
-
-.piattaforma-gioco {
-  margin: 4px 14px 12px;
-  color: #a1a1aa;
-  font-size: 0.82rem;
-}
-
-.badges-gioco {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 0 14px 16px;
-  margin-top: auto;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 10px;
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  border: 1px solid transparent;
-}
-
-.badge-piattaforma {
-  background: #27272a;
-  border-color: #3f3f46;
-  color: #d4d4d8;
-}
-
-.stato-da-iniziare {
-  background: #1e293b;
-  border-color: #334155;
-  color: #93c5fd;
-}
-
-.stato-in-corso {
-  background: #422006;
-  border-color: #92400e;
-  color: #fbbf24;
-}
-
-.stato-finito {
-  background: #052e16;
-  border-color: #166534;
-  color: #86efac;
-}
-
-.stato-abbandonato {
-  background: #3f1d2b;
-  border-color: #9f1239;
-  color: #fda4af;
-}
-
-.badge-platino {
-  background: #422006;
-  border-color: #a16207;
-  color: #fde047;
-}
-
-/* Finestra di modifica */
-
-.overlay-modifica {
-  position: fixed;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  padding: 20px;
-  background: rgba(9, 9, 11, 0.75);
-  z-index: 100;
-}
-
-.finestra-modifica {
-  width: min(480px, 100%);
-  background: #18181b;
-  border: 1px solid #27272a;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-}
-
-.finestra-modifica h2 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-.finestra-modifica .piattaforma-gioco {
-  margin-top: 4px;
-}
-
-.pulsante-secondario {
-  background: #27272a;
-  border: 1px solid #3f3f46;
-  color: #d4d4d8;
-}
-
-.pulsante-secondario:hover {
-  background: #3f3f46;
-}
-
-.finestra-modifica .pulsante-elimina {
-  margin-top: 16px;
-  width: 100%;
-}
-
-/* Libreria: schede ordinate e controlli leggibili */
-
-#lista-libreria {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-  align-items: stretch;
-}
-
-#lista-libreria .scheda-gioco {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  padding: 0;
-  overflow: hidden;
-  background: #151b2d;
-  border: 1px solid #2c354b;
-  border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
-  transition:
-    transform 0.2s ease,
-    border-color 0.2s ease;
-}
-
-#lista-libreria .scheda-gioco:hover {
-  transform: translateY(-3px);
-  border-color: #8b78d8;
-}
-
-/* Immagini: stessa altezza anche tra giochi diversi */
-
-#lista-libreria .contenitore-immagine {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  flex-shrink: 0;
-  background: #20283c;
-}
-
-#lista-libreria .contenitore-immagine img,
-#lista-libreria .scheda-gioco > img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  margin: 0;
-  border-radius: 0;
-}
-
-/* Titolo e pulsante: due colonne, senza sovrapposizioni */
-
-#lista-libreria .intestazione-scheda {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: start;
-  gap: 12px;
-  padding: 18px 18px 0;
-}
-
-#lista-libreria .intestazione-scheda h3 {
-  min-width: 0;
-  margin: 0;
-  color: #f4f5fb;
-  font-size: 1.05rem;
-  font-weight: 700;
-  line-height: 1.45;
-  overflow-wrap: anywhere;
-}
-
-#lista-libreria .pulsante-modifica {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  min-width: 0;
-  height: auto;
-  margin: 0;
-  padding: 7px 10px;
-  background: #242b40;
-  border: 1px solid #414b68;
-  border-radius: 9px;
-  color: #ddd6fe;
-  font: inherit;
-  font-size: 0.75rem;
-  font-weight: 600;
-  line-height: 1.3;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-#lista-libreria .pulsante-modifica:hover {
-  background: #343052;
-  border-color: #a78bfa;
-}
-
-#lista-libreria .pulsante-modifica:focus-visible {
-  outline: 2px solid #c4b5fd;
-  outline-offset: 3px;
-}
-
-/* Piattaforma */
-
-#lista-libreria .piattaforma-gioco {
-  margin: 8px 18px 18px;
-  color: #aab4ca;
-  font-size: 0.85rem;
-  line-height: 1.5;
-}
-
-/* Dati statici: etichetta a sinistra, valore a destra */
-
-#lista-libreria .dettagli-gioco {
-  display: grid;
-  gap: 12px;
-  margin: auto 18px 0;
-  padding: 16px 0 18px;
-  border-top: 1px solid #2c354b;
-}
-
-#lista-libreria .dettagli-gioco p {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 16px;
-  margin: 0;
-  color: #e5e9f3;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  text-align: right;
-}
-
-#lista-libreria .dettagli-gioco p > span {
-  flex-shrink: 0;
-  color: #99a5bd;
-  text-align: left;
-}
-
-#lista-libreria .dettagli-gioco .platino-ottenuto {
-  color: #f6d775;
-}
-
-/* Schermi piccoli */
-
-@media (max-width: 600px) {
-  #lista-libreria {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #lista-libreria .scheda-gioco {
-    transition: none;
-  }
-
-  #lista-libreria .scheda-gioco:hover {
-    transform: none;
-  }
-}
-/* Ricerca e filtri della libreria */
-
-.filtri-libreria {
-  display: grid;
-  gap: 16px;
-  margin: 20px 0 24px;
-  padding: 20px;
-  background: #121829;
-  border: 1px solid #2c354b;
-  border-radius: 16px;
-}
-
-.filtri-libreria label {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-width: 0;
-  color: #b7c0d5;
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-.filtri-libreria input[type="search"],
-.filtri-libreria select {
-  box-sizing: border-box;
-  width: 100%;
-  min-width: 0;
-  min-height: 44px;
-  margin: 0;
-  padding: 11px 12px;
-  background: #1a2236;
-  border: 1px solid #38445f;
-  border-radius: 10px;
-  color: #f0f2f8;
-  font: inherit;
-}
-
-.filtri-libreria input[type="search"]::placeholder {
-  color: #939fb8;
-}
-
-.filtri-libreria input:focus-visible,
-.filtri-libreria select:focus-visible,
-.filtri-libreria button:focus-visible {
-  outline: 2px solid #a78bfa;
-  outline-offset: 3px;
-}
-
-.riga-filtri {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.azioni-filtri {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 14px;
-}
-
-.filtri-libreria .filtro-platino {
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-}
-
-.filtro-platino input {
-  width: 18px;
-  height: 18px;
-  margin: 0;
-  accent-color: #a78bfa;
-}
-
-#azzera-filtri {
-  width: auto;
-  margin: 0;
-  padding: 9px 13px;
-  background: transparent;
-  border: 1px solid #414b68;
-  border-radius: 9px;
-  color: #d8d1f8;
-  font: inherit;
-  font-size: 0.8rem;
-  cursor: pointer;
-}
-
-#azzera-filtri:hover {
-  background: #242b40;
-  border-color: #a78bfa;
-}
-
-.libreria-nessun-risultato {
-  grid-column: 1 / -1;
-  margin: 0;
-  padding: 28px 20px;
-  border: 1px dashed #414b68;
-  border-radius: 14px;
-  color: #b7c0d5;
-  text-align: center;
-}
-
-@media (max-width: 600px) {
-  .riga-filtri {
-    grid-template-columns: 1fr;
-  }
-
-  .filtri-libreria {
-    padding: 16px;
-  }
-}
+    .ricerca-giochi {
+      margin-top: 48px;
+    }
+
+    .ricerca-giochi>p {
+      color: #aab6cd;
+    }
+
+    .barra-ricerca {
+      margin-top: 24px;
+    }
+
+    .barra-ricerca label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .campi-ricerca {
+      display: flex;
+      gap: 12px;
+    }
+
+    .campi-ricerca input {
+      flex: 1;
+      min-width: 0;
+      padding: 14px 16px;
+      border: 1px solid #43516c;
+      border-radius: 10px;
+      background: #151d31;
+      color: #f1f5f9;
+      font: inherit;
+    }
+
+    .campi-ricerca input::placeholder {
+      color: #aab6cd;
+    }
+
+    .campi-ricerca button {
+      padding: 14px 24px;
+      border: none;
+      border-radius: 10px;
+      background: #a78bfa;
+      color: #0b1020;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .campi-ricerca button:hover {
+      background: #c4b5fd;
+    }
+
+    .campi-ricerca button:disabled {
+      opacity: 0.6;
+      cursor: wait;
+    }
+
+    .campi-ricerca input:focus-visible,
+    .campi-ricerca button:focus-visible,
+    .crediti a:focus-visible {
+      outline: 3px solid #c4b5fd;
+      outline-offset: 3px;
+    }
+
+    #messaggio-ricerca {
+      min-height: 26px;
+      margin-top: 16px;
+    }
+
+    #risultati-ricerca {
+      margin-top: 20px;
+    }
+
+    .scheda-gioco {
+      min-width: 0;
+      overflow: hidden;
+      padding: 0;
+    }
+
+
+    .scheda-gioco img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: 180px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+
+    .scheda-gioco h3 {
+      margin: 18px 18px 12px;
+      font-size: 20px;
+      line-height: 1.3;
+    }
+
+    .scheda-gioco p {
+      margin: 0 18px 12px;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .scheda-gioco p:last-child {
+      margin-bottom: 20px;
+    }
+
+    .crediti {
+      margin-top: 24px;
+      font-size: 13px;
+    }
+
+    .crediti a {
+      color: #c4b5fd;
+    }
+
+    @media (max-width: 540px) {
+      .campi-ricerca {
+        flex-direction: column;
+      }
+
+      .campi-ricerca button {
+        width: 100%;
+      }
+    }
+
+    /* Aggiunta di un gioco alla libreria */
+
+    .form-aggiunta {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 20px 18px;
+    }
+
+    .form-aggiunta label {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .form-aggiunta select {
+      width: 100%;
+      min-width: 0;
+      padding: 10px;
+      border: 1px solid #43516c;
+      border-radius: 8px;
+      background: #0b1020;
+      color: #f1f5f9;
+      font: inherit;
+    }
+
+    .form-aggiunta button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: #a78bfa;
+      color: #0b1020;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .form-aggiunta button:hover {
+      background: #c4b5fd;
+    }
+
+    .form-aggiunta select:focus-visible,
+    .form-aggiunta button:focus-visible {
+      outline: 3px solid #c4b5fd;
+      outline-offset: 3px;
+    }
+
+    .scheda-gioco .messaggio-aggiunta {
+      margin: 0;
+      color: #c4b5fd;
+      font-size: 14px;
+    }
+
+
+    /* Libreria personale */
+
+    .libreria {
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid #263149;
+    }
+
+    #messaggio-libreria {
+      color: #aab6cd;
+      min-height: 26px;
+    }
+
+    #lista-libreria {
+      margin-top: 24px;
+    }
+
+    /* Controlli della libreria */
+
+    .form-aggiunta .opzione-platino {
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      font-weight: 400;
+    }
+
+    .opzione-platino input {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      accent-color: #a78bfa;
+    }
+
+    .form-aggiunta .pulsante-elimina {
+      background: transparent;
+      border: 1px solid #fb7185;
+      color: #fda4af;
+    }
+
+    .form-aggiunta .pulsante-elimina:hover {
+      background: #3b1825;
+    }
+
+
+    /* Scheda libreria */
+
+    #lista-libreria {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      align-items: start;
+    }
+
+    .scheda-gioco {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 0;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .scheda-gioco:hover {
+      transform: translateY(-4px);
+      border-color: #a78bfa;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+    }
+
+    .contenitore-immagine {
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: #18181b;
+    }
+
+    .contenitore-immagine img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .intestazione-scheda {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 14px 14px 0;
+    }
+
+    .intestazione-scheda h3 {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+
+    .pulsante-modifica {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      display: grid;
+      place-items: center;
+      background: #27272a;
+      border: 1px solid #3f3f46;
+      color: #d4d4d8;
+      border-radius: 10px;
+      font-size: 0.9rem;
+    }
+
+    .pulsante-modifica:hover {
+      background: #3f3f46;
+      border-color: #a78bfa;
+    }
+
+    .piattaforma-gioco {
+      margin: 4px 14px 12px;
+      color: #a1a1aa;
+      font-size: 0.82rem;
+    }
+
+    .badges-gioco {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0 14px 16px;
+      margin-top: auto;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      border: 1px solid transparent;
+    }
+
+    .badge-piattaforma {
+      background: #27272a;
+      border-color: #3f3f46;
+      color: #d4d4d8;
+    }
+
+    .stato-da-iniziare {
+      background: #1e293b;
+      border-color: #334155;
+      color: #93c5fd;
+    }
+
+    .stato-in-corso {
+      background: #422006;
+      border-color: #92400e;
+      color: #fbbf24;
+    }
+
+    .stato-finito {
+      background: #052e16;
+      border-color: #166534;
+      color: #86efac;
+    }
+
+    .stato-abbandonato {
+      background: #3f1d2b;
+      border-color: #9f1239;
+      color: #fda4af;
+    }
+
+    .badge-platino {
+      background: #422006;
+      border-color: #a16207;
+      color: #fde047;
+    }
+
+    /* Finestra di modifica */
+
+    .overlay-modifica {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(9, 9, 11, 0.75);
+      z-index: 100;
+    }
+
+    .finestra-modifica {
+      width: min(480px, 100%);
+      background: #18181b;
+      border: 1px solid #27272a;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .finestra-modifica h2 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+
+    .finestra-modifica .piattaforma-gioco {
+      margin-top: 4px;
+    }
+
+    .pulsante-secondario {
+      background: #27272a;
+      border: 1px solid #3f3f46;
+      color: #d4d4d8;
+    }
+
+    .pulsante-secondario:hover {
+      background: #3f3f46;
+    }
+
+    .finestra-modifica .pulsante-elimina {
+      margin-top: 16px;
+      width: 100%;
+    }
+
+    /* Libreria: schede ordinate e controlli leggibili */
+
+    #lista-libreria {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    #lista-libreria .scheda-gioco {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #151b2d;
+      border: 1px solid #2c354b;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    #lista-libreria .scheda-gioco:hover {
+      transform: translateY(-3px);
+      border-color: #8b78d8;
+    }
+
+    /* Immagini: stessa altezza anche tra giochi diversi */
+
+    #lista-libreria .contenitore-immagine {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #20283c;
+    }
+
+    #lista-libreria .contenitore-immagine img,
+    #lista-libreria .scheda-gioco>img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      margin: 0;
+      border-radius: 0;
+    }
+
+    /* Titolo e pulsante: due colonne, senza sovrapposizioni */
+
+    #lista-libreria .intestazione-scheda {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: start;
+      gap: 12px;
+      padding: 18px 18px 0;
+    }
+
+    #lista-libreria .intestazione-scheda h3 {
+      min-width: 0;
+      margin: 0;
+      color: #f4f5fb;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    #lista-libreria .pulsante-modifica {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: auto;
+      min-width: 0;
+      height: auto;
+      margin: 0;
+      padding: 7px 10px;
+      background: #242b40;
+      border: 1px solid #414b68;
+      border-radius: 9px;
+      color: #ddd6fe;
+      font: inherit;
+      font-size: 0.75rem;
+      font-weight: 600;
+      line-height: 1.3;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    #lista-libreria .pulsante-modifica:hover {
+      background: #343052;
+      border-color: #a78bfa;
+    }
+
+    #lista-libreria .pulsante-modifica:focus-visible {
+      outline: 2px solid #c4b5fd;
+      outline-offset: 3px;
+    }
+
+    /* Piattaforma */
+
+    #lista-libreria .piattaforma-gioco {
+      margin: 8px 18px 18px;
+      color: #aab4ca;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    /* Dati statici: etichetta a sinistra, valore a destra */
+
+    #lista-libreria .dettagli-gioco {
+      display: grid;
+      gap: 12px;
+      margin: auto 18px 0;
+      padding: 16px 0 18px;
+      border-top: 1px solid #2c354b;
+    }
+
+    #lista-libreria .dettagli-gioco p {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      margin: 0;
+      color: #e5e9f3;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      text-align: right;
+    }
+
+    #lista-libreria .dettagli-gioco p>span {
+      flex-shrink: 0;
+      color: #99a5bd;
+      text-align: left;
+    }
+
+    #lista-libreria .dettagli-gioco .platino-ottenuto {
+      color: #f6d775;
+    }
+
+    /* Schermi piccoli */
+
+    @media (max-width: 600px) {
+      #lista-libreria {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #lista-libreria .scheda-gioco {
+        transition: none;
+      }
+
+      #lista-libreria .scheda-gioco:hover {
+        transform: none;
+      }
+    }
+
+    /* Ricerca e filtri della libreria */
+
+    .filtri-libreria {
+      display: grid;
+      gap: 16px;
+      margin: 20px 0 24px;
+      padding: 20px;
+      background: #121829;
+      border: 1px solid #2c354b;
+      border-radius: 16px;
+    }
+
+    .filtri-libreria label {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 0;
+      color: #b7c0d5;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .filtri-libreria input[type="search"],
+    .filtri-libreria select {
+      box-sizing: border-box;
+      width: 100%;
+      min-width: 0;
+      min-height: 44px;
+      margin: 0;
+      padding: 11px 12px;
+      background: #1a2236;
+      border: 1px solid #38445f;
+      border-radius: 10px;
+      color: #f0f2f8;
+      font: inherit;
+    }
+
+    .filtri-libreria input[type="search"]::placeholder {
+      color: #939fb8;
+    }
+
+    .filtri-libreria input:focus-visible,
+    .filtri-libreria select:focus-visible,
+    .filtri-libreria button:focus-visible {
+      outline: 2px solid #a78bfa;
+      outline-offset: 3px;
+    }
+
+    .riga-filtri {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .azioni-filtri {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .filtri-libreria .filtro-platino {
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .filtro-platino input {
+      width: 18px;
+      height: 18px;
+      margin: 0;
+      accent-color: #a78bfa;
+    }
+
+    #azzera-filtri {
+      width: auto;
+      margin: 0;
+      padding: 9px 13px;
+      background: transparent;
+      border: 1px solid #414b68;
+      border-radius: 9px;
+      color: #d8d1f8;
+      font: inherit;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    #azzera-filtri:hover {
+      background: #242b40;
+      border-color: #a78bfa;
+    }
+
+    .libreria-nessun-risultato {
+      grid-column: 1 / -1;
+      margin: 0;
+      padding: 28px 20px;
+      border: 1px dashed #414b68;
+      border-radius: 14px;
+      color: #b7c0d5;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .riga-filtri {
+        grid-template-columns: 1fr;
+      }
+
+      .filtri-libreria {
+        padding: 16px;
+      }
+    }
+
+    .crediti-icone {
+      margin-top: 8px;
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .crediti-icone a {
+      color: #aab4ca;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .crediti-icone a:hover {
+      color: #ddd6fe;
+    }

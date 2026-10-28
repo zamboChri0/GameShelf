@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta
-    name="description"
-    content="GameShelf: la mia libreria di videogiochi, backlog e platini."
-  >
+  <meta name="description" content="GameShelf: la mia libreria di videogiochi, backlog e platini.">
   <title>GameShelf — La mia libreria gaming</title>
-
-  <link rel="stylesheet" href="css/style.css?v=8">
+  <link rel="icon" type="image/png" href="./favicon.png?v=1">
+  <link rel="stylesheet" href="css/style.css?v=9">
 
 </head>
 
@@ -63,15 +61,8 @@
         <label for="nome-gioco">Nome del gioco</label>
 
         <div class="campi-ricerca">
-          <input
-            type="search"
-            id="nome-gioco"
-            name="search"
-            placeholder="Ad esempio: Elden Ring"
-            minlength="2"
-            maxlength="100"
-            required
-          >
+          <input type="search" id="nome-gioco" name="search" placeholder="Ad esempio: Elden Ring" minlength="2"
+            maxlength="100" required>
 
           <button type="submit" id="pulsante-ricerca">
             Cerca
@@ -91,60 +82,56 @@
       </p>
     </section>
 
-        <section class="libreria" aria-labelledby="titolo-libreria">
+    <section class="libreria" aria-labelledby="titolo-libreria">
       <h2 id="titolo-libreria">La mia libreria</h2>
 
       <p id="messaggio-libreria" role="status"></p>
 
       <div class="filtri-libreria">
-  <label class="ricerca-libreria">
-    Cerca nella tua libreria
-    <input
-      type="search"
-      id="ricerca-libreria"
-      placeholder="Scrivi il titolo di un gioco..."
-    >
-  </label>
+        <label class="ricerca-libreria">
+          Cerca nella tua libreria
+          <input type="search" id="ricerca-libreria" placeholder="Scrivi il titolo di un gioco...">
+        </label>
 
-  <div class="riga-filtri">
-    <label>
-      Stato
-      <select id="filtro-stato">
-        <option value="">Tutti gli stati</option>
-        <option value="Da iniziare">Da iniziare</option>
-        <option value="In corso">In corso</option>
-        <option value="Finito">Finito</option>
-        <option value="Abbandonato">Abbandonato</option>
-      </select>
-    </label>
+        <div class="riga-filtri">
+          <label>
+            Stato
+            <select id="filtro-stato">
+              <option value="">Tutti gli stati</option>
+              <option value="Da iniziare">Da iniziare</option>
+              <option value="In corso">In corso</option>
+              <option value="Finito">Finito</option>
+              <option value="Abbandonato">Abbandonato</option>
+            </select>
+          </label>
 
-    <label>
-      Piattaforma
-      <select id="filtro-piattaforma">
-        <option value="">Tutte le piattaforme</option>
-      </select>
-    </label>
+          <label>
+            Piattaforma
+            <select id="filtro-piattaforma">
+              <option value="">Tutte le piattaforme</option>
+            </select>
+          </label>
 
-    <label>
-      Ordina per
-      <select id="ordine-libreria">
-        <option value="recenti">Ultimi aggiunti</option>
-        <option value="titolo">Titolo A–Z</option>
-      </select>
-    </label>
-  </div>
+          <label>
+            Ordina per
+            <select id="ordine-libreria">
+              <option value="recenti">Ultimi aggiunti</option>
+              <option value="titolo">Titolo A–Z</option>
+            </select>
+          </label>
+        </div>
 
-  <div class="azioni-filtri">
-    <label class="filtro-platino">
-      <input type="checkbox" id="filtro-platino">
-      Solo platinati
-    </label>
+        <div class="azioni-filtri">
+          <label class="filtro-platino">
+            <input type="checkbox" id="filtro-platino">
+            Solo platinati
+          </label>
 
-    <button type="button" id="azzera-filtri">
-      Azzera filtri
-    </button>
-  </div>
-</div>
+          <button type="button" id="azzera-filtri">
+            Azzera filtri
+          </button>
+        </div>
+      </div>
 
       <div id="lista-libreria" class="griglia"></div>
     </section>
@@ -154,6 +141,12 @@
 
   <footer>
     GameShelf · Il mio diario videoludico
+    <p class="crediti-icone">
+      <a href="https://www.flaticon.com/free-icons/games" title="games icons">
+        Games icons created by Magnific - Flaticon
+      </a>
+    </p>
+
   </footer>
 
   <script src="js/storage.js?v=3"></script>
@@ -163,5 +156,5 @@
 
 
 </body>
-</html>
 
+</html>
