@@ -394,10 +394,37 @@ function creaSchedaLibreria(gioco) {
       date.appendChild(riga);
     }
 
+
     aggiungiData("Inizio", gioco.dataInizio);
     aggiungiData("Fine", gioco.dataFine);
 
     scheda.appendChild(date);
+  }
+  if (gioco.oreGiocate || gioco.minutiGiocati) {
+    const tempo = document.createElement("div");
+    tempo.className = "tempo-scheda";
+
+    const etichetta = document.createElement("span");
+    etichetta.textContent = "Tempo giocato";
+
+    const valore = document.createElement("p");
+
+    let testo = "";
+
+    if (gioco.oreGiocate) {
+      testo += `${gioco.oreGiocate} h`;
+    }
+
+    if (gioco.minutiGiocati) {
+      testo += testo
+        ? ` ${gioco.minutiGiocati} min`
+        : `${gioco.minutiGiocati} min`;
+    }
+
+    valore.textContent = testo;
+
+    tempo.append(etichetta, valore);
+    scheda.appendChild(tempo);
   }
 
   return scheda;
@@ -428,6 +455,8 @@ function apriModificaGioco(gioco) {
   labelStato.textContent = "Stato";
 
   const selectStato = document.createElement("select");
+
+
 
   ["Da iniziare", "In corso", "In pausa", "Finito", "Abbandonato"].forEach((stato) => {
     const opzione = document.createElement("option");
@@ -504,8 +533,9 @@ function apriModificaGioco(gioco) {
 
   aggiornaAnteprimaVoto();
 
-    const campiDate = document.createElement("div");
+  const campiDate = document.createElement("div");
   campiDate.className = "campi-date-gioco";
+
 
   const labelInizio = document.createElement("label");
   labelInizio.textContent = "Data di inizio";
@@ -529,9 +559,51 @@ function apriModificaGioco(gioco) {
 
   labelFine.appendChild(inputFine);
 
+  const inputOre = document.createElement("input");
+  inputOre.type = "number";
+  inputOre.min = "0";
+  inputOre.placeholder = "Ore";
+  inputOre.value = gioco.oreGiocate || "";
+
+  const inputMinuti = document.createElement("input");
+  inputMinuti.type = "number";
+  inputMinuti.min = "0";
+  inputMinuti.max = "59";
+  inputMinuti.placeholder = "Minuti";
+  inputMinuti.value = gioco.minutiGiocati || "";
+
+  const campoTempo = document.createElement("div");
+  campoTempo.className = "campo campo-tempo";
+
+  const etichettaTempo = document.createElement("span");
+  etichettaTempo.className = "etichetta-tempo";
+  etichettaTempo.textContent = "Tempo giocato";
+
+  const rigaTempo = document.createElement("div");
+  rigaTempo.className = "riga-tempo";
+
+  function creaCampoTempo(testo, input) {
+    const contenitore = document.createElement("label");
+    contenitore.className = "campo-tempo-unita";
+
+    const nome = document.createElement("span");
+    nome.textContent = testo;
+
+    contenitore.append(input, nome);
+    return contenitore;
+  }
+
+  rigaTempo.append(
+    creaCampoTempo("ore", inputOre),
+    creaCampoTempo("min", inputMinuti)
+  );
+
+  campoTempo.append(etichettaTempo, rigaTempo);
+  form.appendChild(campoTempo);
 
 
   campiDate.append(labelInizio, labelFine);
+
 
   const aiutoDate = document.createElement("p");
   aiutoDate.className = "aiuto-date";
@@ -557,6 +629,13 @@ function apriModificaGioco(gioco) {
     evento.preventDefault();
 
     try {
+      const ore = inputOre.value === "" ? 0 : Number(inputOre.value);
+      const minuti = inputMinuti.value === "" ? 0 : Number(inputMinuti.value);
+
+      if (ore < 0 || minuti < 0) {
+        throw new Error("Il tempo giocato non può essere negativo.");
+      }
+
       aggiornaGioco(gioco.id, {
         stato: selectStato.value,
         platino: supportaPlatino && checkboxPlatino.checked,
@@ -565,7 +644,10 @@ function apriModificaGioco(gioco) {
           : Number(selectVoto.value),
         dataInizio: inputInizio.value || null,
         dataFine: inputFine.value || null,
+        oreGiocate: ore,
+        minutiGiocati: minuti,
       });
+
 
 
 

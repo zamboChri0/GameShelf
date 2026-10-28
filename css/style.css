@@ -1045,3 +1045,98 @@
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
+/* Tempo giocato */
+
+#lista-libreria .tempo-scheda {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 18px 18px;
+  padding-top: 14px;
+  border-top: 1px solid #2c354b;
+}
+
+#lista-libreria .tempo-scheda span {
+  color: #99a5bd;
+  font-size: 0.8rem;
+}
+
+#lista-libreria .tempo-scheda p {
+  margin: 0;
+  color: #e0e5f0;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Tempo giocato */
+
+.campo-tempo {
+  display: grid;
+  gap: 10px;
+}
+
+.etichetta-tempo {
+  color: #99a5bd;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.riga-tempo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.campo-tempo-unita {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid #2c354b;
+  border-radius: 14px;
+  background: #111725;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.campo-tempo-unita:focus-within {
+  border-color: #5b8cff;
+  background: #131a2b;
+}
+
+.campo-tempo-unita input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: #e0e5f0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.campo-tempo-unita input:focus {
+  outline: none;
+}
+
+.campo-tempo-unita input::-webkit-outer-spin-button,
+.campo-tempo-unita input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.campo-tempo-unita input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.campo-tempo-unita span {
+  color: #99a5bd;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
