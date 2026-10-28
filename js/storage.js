@@ -7,28 +7,18 @@ function leggiLibreria() {
     return [];
   }
 
-  const originali = JSON.parse(contenuto);
-  const giochi = normalizzaLibreriaRun(originali);
+  const giochi = JSON.parse(contenuto);
 
-  if (JSON.stringify(originali) !== JSON.stringify(giochi)) {
-    localStorage.setItem(
-      CHIAVE_LIBRERIA,
-      JSON.stringify(giochi)
-    );
+  if (!Array.isArray(giochi)) {
+    throw new Error("I dati della libreria non sono validi.");
   }
 
   return giochi;
 }
 
 function salvaLibreria(giochi) {
-  const normalizzati = normalizzaLibreriaRun(giochi);
-
-  localStorage.setItem(
-    CHIAVE_LIBRERIA,
-    JSON.stringify(normalizzati)
-  );
+  localStorage.setItem(CHIAVE_LIBRERIA, JSON.stringify(giochi));
 }
-
 
 function aggiungiAllaLibreria(gioco, piattaforma, stato) {
   const giochi = leggiLibreria();
@@ -95,33 +85,13 @@ function aggiornaGioco(id, modifiche) {
     throw new Error("Gioco non trovato nella libreria.");
   }
 
-    const precedente = giochi[indice];
-
-  const aggiornato = {
-    ...precedente,
+  giochi[indice] = {
+    ...giochi[indice],
     ...modifiche,
-    id: precedente.id,
-    versioneRun: precedente.versioneRun,
-    runCorrenteId: precedente.runCorrenteId,
-    runs: precedente.runs.map((run) => ({ ...run })),
+    id: giochi[indice].id,
   };
 
-  const corrente = aggiornato.runs.find(
-    (run) => run.id === aggiornato.runCorrenteId
-  );
-
-  if (Object.prototype.hasOwnProperty.call(modifiche, "stato")) {
-    corrente.stato = modifiche.stato;
-  }
-
-  if (Object.prototype.hasOwnProperty.call(modifiche, "note")) {
-    corrente.note = modifiche.note;
-  }
-
-  giochi[indice] = aggiornato;
-
   salvaLibreria(giochi);
-
 }
 
 function eliminaDallaLibreria(id) {
