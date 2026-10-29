@@ -1,0 +1,1112 @@
+{
+  "app": "GameShelf",
+  "versione": 1,
+  "esportatoIl": "2026-10-29T21:45:56.045Z",
+  "giochi": [
+    {
+      "id": "c99a5869-dc6a-420c-8291-e20b0ebc1b97",
+      "rawgId": 50738,
+      "nome": "Death Stranding",
+      "immagine": "https://media.rawg.io/media/games/2ad/2ad87a4a69b1104f02435c14c5196095.jpg",
+      "generi": [
+        "Adventure",
+        "Action"
+      ],
+      "piattaforma": "PlayStation 4",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T17:28:51.579Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "6405e272-c3e6-4ad8-95d4-9fa213865c95",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "6405e272-c3e6-4ad8-95d4-9fa213865c95"
+    },
+    {
+      "id": "8cf2bf17-9ab7-4bd9-9f8e-0f7f3e482099",
+      "rawgId": 891532,
+      "nome": "Death Stranding 2: On The Beach",
+      "immagine": "https://media.rawg.io/media/games/b85/b85bc300d42588af66fb516b7563f74f.jpg",
+      "generi": [
+        "Adventure",
+        "Action"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T17:33:15.247Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "2c4fe3bb-b711-4f70-86b6-1521669a53ea",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "2c4fe3bb-b711-4f70-86b6-1521669a53ea"
+    },
+    {
+      "id": "383aa661-5971-4e8e-9afe-db4002e046c1",
+      "rawgId": 471026,
+      "nome": "Fable",
+      "immagine": "https://media.rawg.io/media/games/e06/e06a04ece5555c8c15a7c68e22649f0c.jpg",
+      "generi": [
+        "Action",
+        "RPG"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Da iniziare",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:07:34.428Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "683b14c8-d635-435d-90e0-7eef46fecaf2",
+          "numero": 1,
+          "stato": "Da iniziare",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "683b14c8-d635-435d-90e0-7eef46fecaf2"
+    },
+    {
+      "id": "739b4ce7-1012-4fec-9c96-1fb9ff91004f",
+      "rawgId": 704634,
+      "nome": "Uncharted: Legacy of Thieves Collection",
+      "immagine": "https://media.rawg.io/media/games/de6/de66bc4c72b45c3bb906c85d0628112d.jpg",
+      "generi": [
+        "Adventure",
+        "Action"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:10:45.643Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "8e2a5e37-f3f6-4159-b669-c5b3c413df9a",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "8e2a5e37-f3f6-4159-b669-c5b3c413df9a"
+    },
+    {
+      "id": "d449d0b8-3ec7-4ed0-9c1b-b597fa2ff26a",
+      "rawgId": 996046,
+      "nome": "The Blood Of Dawnwalker",
+      "immagine": "https://media.rawg.io/media/games/319/319d18680fd0233e0ff724f234c97d17.jpg",
+      "generi": [
+        "Action",
+        "RPG"
+      ],
+      "piattaforma": "PC",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:11:16.443Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "e016c0a5-56f5-4c61-91d0-e9bd90e30bbd",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "e016c0a5-56f5-4c61-91d0-e9bd90e30bbd"
+    },
+    {
+      "id": "2fcf9247-c8ce-4fd9-87af-fcf9a4256865",
+      "rawgId": 28,
+      "nome": "Red Dead Redemption 2",
+      "immagine": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg",
+      "generi": [
+        "Action"
+      ],
+      "piattaforma": "PlayStation 4",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:11:40.260Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "f2842dbc-470c-4aa8-86c8-6745c91fa5f6",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "f2842dbc-470c-4aa8-86c8-6745c91fa5f6"
+    },
+    {
+      "id": "2e937be8-9046-4f1c-8de5-14ea6d8c1071",
+      "rawgId": 3137,
+      "nome": "UNCHARTED The Nathan Drake Collection",
+      "immagine": "https://media.rawg.io/media/games/696/69626956eaf787f5c1b664984279060f.jpg",
+      "generi": [
+        "Adventure",
+        "Action"
+      ],
+      "piattaforma": "PlayStation 4",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:11:55.776Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "9baf6f2d-dfa4-4da1-9d18-bc832b1e2aea",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "9baf6f2d-dfa4-4da1-9d18-bc832b1e2aea"
+    },
+    {
+      "id": "2a12d20a-906a-48a3-9ead-64951806b26e",
+      "rawgId": 58175,
+      "nome": "God of War (2018)",
+      "immagine": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg",
+      "generi": [
+        "Action"
+      ],
+      "piattaforma": "PlayStation 4",
+      "stato": "Finito",
+      "platino": true,
+      "voto": 5,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:12:37.277Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "ebf8a1b2-c5a6-43db-9fca-914ac5a6a4b4",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "ebf8a1b2-c5a6-43db-9fca-914ac5a6a4b4",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 0,
+      "minutiGiocati": 0
+    },
+    {
+      "id": "a3c10926-79e8-4496-a029-2b53072d2b57",
+      "rawgId": 494384,
+      "nome": "God of War: Ragnarök",
+      "immagine": "https://media.rawg.io/media/games/1c3/1c305096502c475c00276c827f0fd697.jpg",
+      "generi": [
+        "Action"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:12:43.910Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "cf98cfbc-4172-4953-9487-b8d12d7aa0ba",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "cf98cfbc-4172-4953-9487-b8d12d7aa0ba"
+    },
+    {
+      "id": "774811a8-790f-42f0-a0d8-fc47350f6760",
+      "rawgId": 29338,
+      "nome": "Days Gone",
+      "immagine": "https://media.rawg.io/media/games/a79/a79d2fc90c4dbf07a8580b19600fd61d.jpg",
+      "generi": [
+        "Action"
+      ],
+      "piattaforma": "PlayStation 4",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:13:11.376Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "7f087ed5-9fa7-4f7a-a5c6-7f3ea73a6a2a",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "7f087ed5-9fa7-4f7a-a5c6-7f3ea73a6a2a"
+    },
+    {
+      "id": "5790287c-b4f3-448f-9f60-37668d2f246f",
+      "rawgId": 337273,
+      "nome": "Dispatch",
+      "immagine": "https://media.rawg.io/media/games/2f6/2f6c45362818859574ac0e37edf3d3c4.jpg",
+      "generi": [
+        "Adventure",
+        "Action",
+        "Casual",
+        "Strategy",
+        "Indie"
+      ],
+      "piattaforma": "PC",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:13:24.726Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "008fc189-3d62-4f95-902a-4afba4540ed2",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "008fc189-3d62-4f95-902a-4afba4540ed2"
+    },
+    {
+      "id": "1473f8cc-b862-4525-af78-f3dc36f8b0d7",
+      "rawgId": 1017360,
+      "nome": "Assassin's Creed Back Flag Resynced",
+      "immagine": "https://media.rawg.io/media/screenshots/990/99088f6f170459244defd7afd9fce096.jpg",
+      "generi": [
+        "Adventure",
+        "Action"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:13:41.610Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "d7761d08-ae91-49f2-b4b4-3f8476bf811c",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "d7761d08-ae91-49f2-b4b4-3f8476bf811c"
+    },
+    {
+      "id": "7ff6281c-e585-4b0b-a8d0-5276ce2806e9",
+      "rawgId": 663742,
+      "nome": "Marvel's Spider-Man Remastered",
+      "immagine": "https://media.rawg.io/media/games/5f1/5f1399f755ed3a40b04a9195f4c06be5.jpg",
+      "generi": [
+        "Casual",
+        "Adventure",
+        "Action"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:14:13.943Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "d5cc9bb3-9d8d-4191-947b-bb555f803d22",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "d5cc9bb3-9d8d-4191-947b-bb555f803d22"
+    },
+    {
+      "id": "4e18484a-dab9-4e29-9a1a-31fd52e79bba",
+      "rawgId": 662316,
+      "nome": "Marvel's Spider-Man 2",
+      "immagine": "https://media.rawg.io/media/games/7ae/7ae5a14cdb4ab222a134c15f4629e430.jpg",
+      "generi": [
+        "Adventure",
+        "Action"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:14:18.209Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "86550c13-129c-46fc-9595-96e65a5f2f9a",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "86550c13-129c-46fc-9595-96e65a5f2f9a"
+    },
+    {
+      "id": "f2b0fb85-a867-4fdc-b733-2e32d71451a4",
+      "rawgId": 638650,
+      "nome": "Ghost of Tsushima Director's Cut",
+      "immagine": "https://media.rawg.io/media/games/193/193c9fe23ca026914fdf41d551ff3df9.jpg",
+      "generi": [
+        "Adventure",
+        "Action",
+        "RPG"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Finito",
+      "platino": true,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:14:28.360Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "07c759e2-306a-4ef0-a612-f86a6f008f28",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "07c759e2-306a-4ef0-a612-f86a6f008f28",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 0,
+      "minutiGiocati": 0
+    },
+    {
+      "id": "153fbf42-59ad-4cf0-a9bf-9d80f3167da0",
+      "rawgId": 989329,
+      "nome": "Ghost of Yotei",
+      "immagine": "https://media.rawg.io/media/games/30b/30b195c2321d763f807366967ffad793.jpg",
+      "generi": [
+        "Action",
+        "RPG"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:14:31.026Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "e449c3a9-c452-4c25-99c1-9fbadaff1037",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "e449c3a9-c452-4c25-99c1-9fbadaff1037"
+    },
+    {
+      "id": "0d8d05a5-42f2-4af4-a9e4-6124683df22f",
+      "rawgId": 1004298,
+      "nome": "007 First Light",
+      "immagine": "https://media.rawg.io/media/games/86f/86f2dc1b9671f25a13ff92e069b51786.jpg",
+      "generi": [
+        "Action"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:14:43.860Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "493437dd-b903-4fe5-8d4e-225e0260dab6",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "493437dd-b903-4fe5-8d4e-225e0260dab6"
+    },
+    {
+      "id": "329cdf2a-ed0a-40d8-a2fd-5a96969eb3d1",
+      "rawgId": 616693,
+      "nome": "Replaced",
+      "immagine": "https://media.rawg.io/media/games/041/041e04184322bc859d617b790d8bfab9.jpg",
+      "generi": [
+        "Platformer",
+        "Action"
+      ],
+      "piattaforma": "PC",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:15:12.193Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "49215ad4-5867-420e-88c3-cecc56342956",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "49215ad4-5867-420e-88c3-cecc56342956"
+    },
+    {
+      "id": "9aa91f23-bc68-47c1-a629-c49ac26a02c9",
+      "rawgId": 989802,
+      "nome": "Horizon Zero Dawn Remastered",
+      "immagine": "https://media.rawg.io/media/screenshots/e9c/e9cfcfafdf44b339edf6a9a07b8faed9.jpg",
+      "generi": [
+        "Shooter",
+        "Adventure",
+        "Action",
+        "RPG"
+      ],
+      "piattaforma": "PC",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:15:30.776Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "670814a4-04c0-490c-ad2a-1f747951660a",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "670814a4-04c0-490c-ad2a-1f747951660a"
+    },
+    {
+      "id": "fabf7ef3-5703-48b5-b151-9f458ddbe16a",
+      "rawgId": 3265,
+      "nome": "God of War III Remastered",
+      "immagine": "https://media.rawg.io/media/games/4b6/4b67558bf04c7211aabeff179271bdd8.jpg",
+      "generi": [
+        "Adventure",
+        "Action"
+      ],
+      "piattaforma": "PlayStation 4",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:15:44.259Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "822c46b6-324f-48b9-a0f0-cc0ca1cee223",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "822c46b6-324f-48b9-a0f0-cc0ca1cee223"
+    },
+    {
+      "id": "7130aeaa-dc39-401c-be32-c21ead077ea0",
+      "rawgId": 59359,
+      "nome": "A Plague Tale: Innocence",
+      "immagine": "https://media.rawg.io/media/games/b4a/b4adf80c36e267b35acc3497ed2af19c.jpg",
+      "generi": [
+        "Adventure",
+        "Action"
+      ],
+      "piattaforma": "PC",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:16:02.043Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "ffb14cc1-6e78-44eb-be1c-01c7e104f77e",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "ffb14cc1-6e78-44eb-be1c-01c7e104f77e"
+    },
+    {
+      "id": "c9b34730-89ca-4df4-a1be-29e971bd6401",
+      "rawgId": 452634,
+      "nome": "Marvel's Spider-Man: Miles Morales",
+      "immagine": "https://media.rawg.io/media/games/048/048b46cdc66cbc7e235e1f359c2a77ec.jpg",
+      "generi": [
+        "Action"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:16:20.326Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "cda60106-77e0-4b01-b605-86465622dcbf",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "cda60106-77e0-4b01-b605-86465622dcbf"
+    },
+    {
+      "id": "80a6d6fb-b5b8-4850-a9eb-c1d83832c96c",
+      "rawgId": 3498,
+      "nome": "Grand Theft Auto V",
+      "immagine": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg",
+      "generi": [
+        "Action"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Finito",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:16:32.359Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "c99b80a7-0d68-40e8-8cf8-ee9a2213a310",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "c99b80a7-0d68-40e8-8cf8-ee9a2213a310"
+    },
+    {
+      "id": "642b6dea-a1aa-409f-b254-026a7c5299f8",
+      "rawgId": 972995,
+      "nome": "Grand Theft Auto VI",
+      "immagine": "https://media.rawg.io/media/games/734/7342a1cd82c8997ec620084ae4c2e7e4.jpg",
+      "generi": [
+        "Action"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Da iniziare",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:16:39.609Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "c3f4f293-d2eb-41d5-bf8c-d1d775718ccf",
+          "numero": 1,
+          "stato": "Da iniziare",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "c3f4f293-d2eb-41d5-bf8c-d1d775718ccf"
+    },
+    {
+      "id": "7d2995ce-e12c-403e-aa91-4d41b82822fe",
+      "rawgId": 799265,
+      "nome": "The Last of Us Part I",
+      "immagine": "https://media.rawg.io/media/games/71d/71df9e759b2246f9769126c98ac997fc.jpg",
+      "generi": [
+        "Shooter",
+        "Adventure",
+        "Action"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Abbandonato",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:16:53.826Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "3b40b046-100b-4671-8b5b-928b68ee53a3",
+          "numero": 1,
+          "stato": "Finito",
+          "note": ""
+        },
+        {
+          "id": "fde98f0a-6b40-49fc-8e36-49018fdb7e38",
+          "numero": 2,
+          "stato": "Abbandonato",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "fde98f0a-6b40-49fc-8e36-49018fdb7e38"
+    },
+    {
+      "id": "1c58dbf3-1c3a-4322-ba84-d3c02721d7dc",
+      "rawgId": 51325,
+      "nome": "The Last of Us Part II",
+      "immagine": "https://media.rawg.io/media/games/909/909974d1c7863c2027241e265fe7011f.jpg",
+      "generi": [
+        "Shooter",
+        "Adventure",
+        "Action"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Da iniziare",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:16:57.776Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "ac64b527-8615-4890-98f9-ea1a2b7411be",
+          "numero": 1,
+          "stato": "Da iniziare",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "ac64b527-8615-4890-98f9-ea1a2b7411be"
+    },
+    {
+      "id": "0cd5eadd-c462-4027-a095-a5495696b5b0",
+      "rawgId": 257255,
+      "nome": "The Witcher 3 Wild Hunt - Complete Edition",
+      "immagine": "https://media.rawg.io/media/games/52b/52be96c19be0d79eeb8664e4ca2aabd5.jpg",
+      "generi": [
+        "Adventure",
+        "RPG"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "In corso",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:17:44.842Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "e3f3d618-6da9-4f90-a40d-f929c8ce4003",
+          "numero": 1,
+          "stato": "In corso",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "e3f3d618-6da9-4f90-a40d-f929c8ce4003"
+    },
+    {
+      "id": "0318dc56-07b4-425c-8874-7804f58d97fc",
+      "rawgId": 362941,
+      "nome": "The Walking Dead: The Telltale Definitive Series",
+      "immagine": "https://media.rawg.io/media/games/810/8101cb5bf4db5f85ca1b6fab14cab5ee.jpg",
+      "generi": [
+        "Adventure"
+      ],
+      "piattaforma": "PlayStation 4",
+      "stato": "Da iniziare",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:18:13.726Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "e11b206f-68ea-487d-81d2-a29eba7890d2",
+          "numero": 1,
+          "stato": "Da iniziare",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "e11b206f-68ea-487d-81d2-a29eba7890d2"
+    },
+    {
+      "id": "475b2824-2c8a-4da4-b968-2ee879a5bf02",
+      "rawgId": 52368,
+      "nome": "Shadow of the Colossus  (2018)",
+      "immagine": "https://media.rawg.io/media/games/5c5/5c5089af36b99bf9465357a8556449f9.jpg",
+      "generi": [
+        "Adventure",
+        "Action"
+      ],
+      "piattaforma": "PlayStation 4",
+      "stato": "Da iniziare",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:18:27.759Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "ec2e5349-b7d1-47a3-b467-c4b0f9cc976c",
+          "numero": 1,
+          "stato": "Da iniziare",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "ec2e5349-b7d1-47a3-b467-c4b0f9cc976c"
+    },
+    {
+      "id": "acc9a0a9-b7ea-4033-83d9-bc1fd00e40d2",
+      "rawgId": 994600,
+      "nome": "Onimusha: Way Of The Sword",
+      "immagine": "https://media.rawg.io/media/games/48e/48ea2f7adb60615d658887899ffe4d1f.jpg",
+      "generi": [
+        "Adventure",
+        "Action",
+        "RPG"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Da iniziare",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:18:57.692Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "c4e50d2d-0160-4616-afeb-c12a70062004",
+          "numero": 1,
+          "stato": "Da iniziare",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "c4e50d2d-0160-4616-afeb-c12a70062004"
+    },
+    {
+      "id": "e03f525c-0c47-43c8-83ae-9ab13fbd9c10",
+      "rawgId": 103715,
+      "nome": "Mixtape",
+      "immagine": "https://media.rawg.io/media/games/a57/a571fcbc2b2ef30fb3e13a4272ef3a93.jpeg",
+      "generi": [
+        "Adventure"
+      ],
+      "piattaforma": "PC",
+      "stato": "Abbandonato",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:19:06.776Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "d7bf531a-6fa5-4662-b769-8320e43118c2",
+          "numero": 1,
+          "stato": "Abbandonato",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "d7bf531a-6fa5-4662-b769-8320e43118c2"
+    },
+    {
+      "id": "fa2bcf7a-0899-46b8-94db-16efb8204e1d",
+      "rawgId": 662318,
+      "nome": "Marvel's Wolverine",
+      "immagine": "https://media.rawg.io/media/games/28d/28d61be51ec0411e24c28f71122dcaaf.jpeg",
+      "generi": [
+        "Action"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Da iniziare",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:19:15.576Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "12574985-ae01-4517-8e91-e2b9b0034d9e",
+          "numero": 1,
+          "stato": "Da iniziare",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "12574985-ae01-4517-8e91-e2b9b0034d9e"
+    },
+    {
+      "id": "4bb7bcdb-8727-49f8-84d8-a8f68a47eb8f",
+      "rawgId": 1018045,
+      "nome": "God of War Laufey",
+      "immagine": "https://media.rawg.io/media/games/d9e/d9e30f2182a8535a0ef02949dfb1ffed.jpg",
+      "generi": [
+        "Adventure",
+        "Action"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Da iniziare",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:19:42.092Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "29ed97fc-b07e-480c-86be-8298fe86fd68",
+          "numero": 1,
+          "stato": "Da iniziare",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "29ed97fc-b07e-480c-86be-8298fe86fd68"
+    },
+    {
+      "id": "4b6acfce-67f6-4d39-b3f4-2d25e1a52bad",
+      "rawgId": 41494,
+      "nome": "Cyberpunk 2077",
+      "immagine": "https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg",
+      "generi": [
+        "Shooter",
+        "Action",
+        "RPG"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Da iniziare",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:20:36.842Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "1fdd1b50-5034-4eb2-946e-6a8a80684571",
+          "numero": 1,
+          "stato": "Da iniziare",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "1fdd1b50-5034-4eb2-946e-6a8a80684571"
+    },
+    {
+      "id": "2399ff36-4744-49f8-aea9-b44ee9d536cd",
+      "rawgId": 846303,
+      "nome": "Cyberpunk 2077: Phantom Liberty",
+      "immagine": "https://media.rawg.io/media/games/062/06285b425e61623530c5430f20e5d222.jpg",
+      "generi": [
+        "Shooter",
+        "Action"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Da iniziare",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:20:39.275Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "96680349-60f2-4ede-b0e6-cf6c69d3a62c",
+          "numero": 1,
+          "stato": "Da iniziare",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "96680349-60f2-4ede-b0e6-cf6c69d3a62c"
+    },
+    {
+      "id": "4761ccf0-468c-4d44-8036-67c52725fe4b",
+      "rawgId": 616697,
+      "nome": "A Plague Tale: Requiem",
+      "immagine": "https://media.rawg.io/media/games/cd0/cd074f3f6045297cda9ad077273c09b6.jpg",
+      "generi": [
+        "Adventure",
+        "Action"
+      ],
+      "piattaforma": "PC",
+      "stato": "Da iniziare",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:21:02.842Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "89f1933d-9646-47bd-a12c-6c390ccf7a0c",
+          "numero": 1,
+          "stato": "Da iniziare",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "89f1933d-9646-47bd-a12c-6c390ccf7a0c"
+    },
+    {
+      "id": "85b6d210-3f2d-41fe-a027-b104366f6815",
+      "rawgId": 1004520,
+      "nome": "Resonance: A Plague Tale Legacy",
+      "immagine": "https://media.rawg.io/media/games/c55/c55cc53bdf3cc4ee6f0a39f3c8b1dca7.jpg",
+      "generi": [
+        "Adventure",
+        "Action"
+      ],
+      "piattaforma": "PC",
+      "stato": "Da iniziare",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:21:04.859Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "bb237fc9-56b0-4323-8999-6804379405de",
+          "numero": 1,
+          "stato": "Da iniziare",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "bb237fc9-56b0-4323-8999-6804379405de"
+    },
+    {
+      "id": "c651364d-b53d-4be2-84af-e8952ecf922d",
+      "rawgId": 471026,
+      "nome": "Fable",
+      "immagine": "https://media.rawg.io/media/games/e06/e06a04ece5555c8c15a7c68e22649f0c.jpg",
+      "generi": [
+        "Action",
+        "RPG"
+      ],
+      "piattaforma": "PC",
+      "stato": "Da iniziare",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:21:14.509Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "3dda044a-3d87-48c2-a973-d5e4faad38c0",
+          "numero": 1,
+          "stato": "Da iniziare",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "3dda044a-3d87-48c2-a973-d5e4faad38c0"
+    },
+    {
+      "id": "5a769393-481a-454b-9c7c-eae1996603f9",
+      "rawgId": 3603,
+      "nome": "Metro 2033 Redux",
+      "immagine": "https://media.rawg.io/media/games/4fb/4fb548e4816c84d1d70f1a228fb167cc.jpg",
+      "generi": [
+        "Shooter",
+        "Action"
+      ],
+      "piattaforma": "PC",
+      "stato": "Da iniziare",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:21:43.075Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "c0624f2a-ba8e-4467-abb2-b6da851a9516",
+          "numero": 1,
+          "stato": "Da iniziare",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "c0624f2a-ba8e-4467-abb2-b6da851a9516"
+    },
+    {
+      "id": "bac35714-0eb2-43a2-908f-6e33e1ae3d77",
+      "rawgId": 3604,
+      "nome": "Metro: Last Light Redux",
+      "immagine": "https://media.rawg.io/media/games/7a4/7a45e4cdc5b07f316d49cf147b083b27.jpg",
+      "generi": [
+        "Shooter",
+        "Action"
+      ],
+      "piattaforma": "PC",
+      "stato": "Da iniziare",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:21:56.726Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "b7141a91-d273-4df7-8f96-bfa3532de46e",
+          "numero": 1,
+          "stato": "Da iniziare",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "b7141a91-d273-4df7-8f96-bfa3532de46e"
+    },
+    {
+      "id": "4f0cae3a-9efe-4f15-bbc4-2da52b9a0ee7",
+      "rawgId": 28201,
+      "nome": "Metro Exodus",
+      "immagine": "https://media.rawg.io/media/games/152/152e788b7504aa2753c86dae912fb34c.jpg",
+      "generi": [
+        "Shooter",
+        "Action"
+      ],
+      "piattaforma": "PC",
+      "stato": "Da iniziare",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:22:16.892Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "c91255db-87e0-49c5-98f4-59ed06e41fd8",
+          "numero": 1,
+          "stato": "Da iniziare",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "c91255db-87e0-49c5-98f4-59ed06e41fd8"
+    },
+    {
+      "id": "2da28ebc-5d51-4e2c-9f1e-3fdf76211f70",
+      "rawgId": 1017176,
+      "nome": "Metro 2039",
+      "immagine": "https://media.rawg.io/media/games/4a5/4a5865eca8376e08a8e31ce278b5248f.jpg",
+      "generi": [
+        "Shooter"
+      ],
+      "piattaforma": "PC",
+      "stato": "Da iniziare",
+      "platino": false,
+      "voto": null,
+      "note": "",
+      "aggiuntoIl": "2026-10-26T18:22:22.925Z",
+      "versioneRun": 1,
+      "runs": [
+        {
+          "id": "87ac266b-ae88-4cd2-9c2b-f44f09a50fbb",
+          "numero": 1,
+          "stato": "Da iniziare",
+          "note": ""
+        }
+      ],
+      "runCorrenteId": "87ac266b-ae88-4cd2-9c2b-f44f09a50fbb"
+    }
+  ]
+}
