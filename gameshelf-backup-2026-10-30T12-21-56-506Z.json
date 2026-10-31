@@ -1,7 +1,7 @@
 {
   "app": "GameShelf",
   "versione": 1,
-  "esportatoIl": "2026-10-29T21:45:56.045Z",
+  "esportatoIl": "2026-10-30T12:21:56.506Z",
   "giochi": [
     {
       "id": "c99a5869-dc6a-420c-8291-e20b0ebc1b97",
@@ -15,7 +15,7 @@
       "piattaforma": "PlayStation 4",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 3,
       "note": "",
       "aggiuntoIl": "2026-10-26T17:28:51.579Z",
       "versioneRun": 1,
@@ -27,7 +27,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "6405e272-c3e6-4ad8-95d4-9fa213865c95"
+      "runCorrenteId": "6405e272-c3e6-4ad8-95d4-9fa213865c95",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 0,
+      "minutiGiocati": 0
     },
     {
       "id": "8cf2bf17-9ab7-4bd9-9f8e-0f7f3e482099",
@@ -41,7 +45,7 @@
       "piattaforma": "PlayStation 5",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 4.5,
       "note": "",
       "aggiuntoIl": "2026-10-26T17:33:15.247Z",
       "versioneRun": 1,
@@ -53,7 +57,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "2c4fe3bb-b711-4f70-86b6-1521669a53ea"
+      "runCorrenteId": "2c4fe3bb-b711-4f70-86b6-1521669a53ea",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 61,
+      "minutiGiocati": 0
     },
     {
       "id": "383aa661-5971-4e8e-9afe-db4002e046c1",
@@ -93,7 +101,7 @@
       "piattaforma": "PlayStation 5",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 4.5,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:10:45.643Z",
       "versioneRun": 1,
@@ -105,7 +113,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "8e2a5e37-f3f6-4159-b669-c5b3c413df9a"
+      "runCorrenteId": "8e2a5e37-f3f6-4159-b669-c5b3c413df9a",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 0,
+      "minutiGiocati": 0
     },
     {
       "id": "d449d0b8-3ec7-4ed0-9c1b-b597fa2ff26a",
@@ -119,7 +131,7 @@
       "piattaforma": "PC",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 5,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:11:16.443Z",
       "versioneRun": 1,
@@ -131,7 +143,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "e016c0a5-56f5-4c61-91d0-e9bd90e30bbd"
+      "runCorrenteId": "e016c0a5-56f5-4c61-91d0-e9bd90e30bbd",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 53,
+      "minutiGiocati": 25
     },
     {
       "id": "2fcf9247-c8ce-4fd9-87af-fcf9a4256865",
@@ -144,7 +160,7 @@
       "piattaforma": "PlayStation 4",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 5,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:11:40.260Z",
       "versioneRun": 1,
@@ -156,7 +172,12 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "f2842dbc-470c-4aa8-86c8-6745c91fa5f6"
+      "runCorrenteId": "f2842dbc-470c-4aa8-86c8-6745c91fa5f6",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 0,
+      "minutiGiocati": 0,
+      "preferito": true
     },
     {
       "id": "2e937be8-9046-4f1c-8de5-14ea6d8c1071",
@@ -170,7 +191,7 @@
       "piattaforma": "PlayStation 4",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 3.5,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:11:55.776Z",
       "versioneRun": 1,
@@ -182,7 +203,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "9baf6f2d-dfa4-4da1-9d18-bc832b1e2aea"
+      "runCorrenteId": "9baf6f2d-dfa4-4da1-9d18-bc832b1e2aea",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 0,
+      "minutiGiocati": 0
     },
     {
       "id": "2a12d20a-906a-48a3-9ead-64951806b26e",
@@ -211,7 +236,8 @@
       "dataInizio": null,
       "dataFine": null,
       "oreGiocate": 0,
-      "minutiGiocati": 0
+      "minutiGiocati": 0,
+      "preferito": true
     },
     {
       "id": "a3c10926-79e8-4496-a029-2b53072d2b57",
@@ -224,7 +250,7 @@
       "piattaforma": "PlayStation 5",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 4.5,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:12:43.910Z",
       "versioneRun": 1,
@@ -236,7 +262,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "cf98cfbc-4172-4953-9487-b8d12d7aa0ba"
+      "runCorrenteId": "cf98cfbc-4172-4953-9487-b8d12d7aa0ba",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 0,
+      "minutiGiocati": 0
     },
     {
       "id": "774811a8-790f-42f0-a0d8-fc47350f6760",
@@ -249,7 +279,7 @@
       "piattaforma": "PlayStation 4",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 5,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:13:11.376Z",
       "versioneRun": 1,
@@ -261,7 +291,12 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "7f087ed5-9fa7-4f7a-a5c6-7f3ea73a6a2a"
+      "runCorrenteId": "7f087ed5-9fa7-4f7a-a5c6-7f3ea73a6a2a",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 0,
+      "minutiGiocati": 0,
+      "preferito": true
     },
     {
       "id": "5790287c-b4f3-448f-9f60-37668d2f246f",
@@ -278,7 +313,7 @@
       "piattaforma": "PC",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 4.5,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:13:24.726Z",
       "versioneRun": 1,
@@ -290,7 +325,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "008fc189-3d62-4f95-902a-4afba4540ed2"
+      "runCorrenteId": "008fc189-3d62-4f95-902a-4afba4540ed2",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 8,
+      "minutiGiocati": 40
     },
     {
       "id": "1473f8cc-b862-4525-af78-f3dc36f8b0d7",
@@ -304,7 +343,7 @@
       "piattaforma": "PlayStation 5",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 4.5,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:13:41.610Z",
       "versioneRun": 1,
@@ -316,7 +355,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "d7761d08-ae91-49f2-b4b4-3f8476bf811c"
+      "runCorrenteId": "d7761d08-ae91-49f2-b4b4-3f8476bf811c",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 0,
+      "minutiGiocati": 0
     },
     {
       "id": "7ff6281c-e585-4b0b-a8d0-5276ce2806e9",
@@ -331,7 +374,7 @@
       "piattaforma": "PlayStation 5",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 3.5,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:14:13.943Z",
       "versioneRun": 1,
@@ -343,7 +386,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "d5cc9bb3-9d8d-4191-947b-bb555f803d22"
+      "runCorrenteId": "d5cc9bb3-9d8d-4191-947b-bb555f803d22",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 0,
+      "minutiGiocati": 0
     },
     {
       "id": "4e18484a-dab9-4e29-9a1a-31fd52e79bba",
@@ -357,7 +404,7 @@
       "piattaforma": "PlayStation 5",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 4,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:14:18.209Z",
       "versioneRun": 1,
@@ -369,7 +416,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "86550c13-129c-46fc-9595-96e65a5f2f9a"
+      "runCorrenteId": "86550c13-129c-46fc-9595-96e65a5f2f9a",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 0,
+      "minutiGiocati": 0
     },
     {
       "id": "f2b0fb85-a867-4fdc-b733-2e32d71451a4",
@@ -384,7 +435,7 @@
       "piattaforma": "PlayStation 5",
       "stato": "Finito",
       "platino": true,
-      "voto": null,
+      "voto": 4,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:14:28.360Z",
       "versioneRun": 1,
@@ -414,7 +465,7 @@
       "piattaforma": "PlayStation 5",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 3.5,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:14:31.026Z",
       "versioneRun": 1,
@@ -426,7 +477,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "e449c3a9-c452-4c25-99c1-9fbadaff1037"
+      "runCorrenteId": "e449c3a9-c452-4c25-99c1-9fbadaff1037",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 0,
+      "minutiGiocati": 0
     },
     {
       "id": "0d8d05a5-42f2-4af4-a9e4-6124683df22f",
@@ -439,7 +494,7 @@
       "piattaforma": "PlayStation 5",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 4,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:14:43.860Z",
       "versioneRun": 1,
@@ -451,7 +506,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "493437dd-b903-4fe5-8d4e-225e0260dab6"
+      "runCorrenteId": "493437dd-b903-4fe5-8d4e-225e0260dab6",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 0,
+      "minutiGiocati": 0
     },
     {
       "id": "329cdf2a-ed0a-40d8-a2fd-5a96969eb3d1",
@@ -465,7 +524,7 @@
       "piattaforma": "PC",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 3.5,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:15:12.193Z",
       "versioneRun": 1,
@@ -477,7 +536,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "49215ad4-5867-420e-88c3-cecc56342956"
+      "runCorrenteId": "49215ad4-5867-420e-88c3-cecc56342956",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 16,
+      "minutiGiocati": 35
     },
     {
       "id": "9aa91f23-bc68-47c1-a629-c49ac26a02c9",
@@ -493,7 +556,7 @@
       "piattaforma": "PC",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 3.5,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:15:30.776Z",
       "versioneRun": 1,
@@ -505,7 +568,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "670814a4-04c0-490c-ad2a-1f747951660a"
+      "runCorrenteId": "670814a4-04c0-490c-ad2a-1f747951660a",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 34,
+      "minutiGiocati": 40
     },
     {
       "id": "fabf7ef3-5703-48b5-b151-9f458ddbe16a",
@@ -519,7 +586,7 @@
       "piattaforma": "PlayStation 4",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 3.5,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:15:44.259Z",
       "versioneRun": 1,
@@ -531,7 +598,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "822c46b6-324f-48b9-a0f0-cc0ca1cee223"
+      "runCorrenteId": "822c46b6-324f-48b9-a0f0-cc0ca1cee223",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 0,
+      "minutiGiocati": 0
     },
     {
       "id": "7130aeaa-dc39-401c-be32-c21ead077ea0",
@@ -545,7 +616,7 @@
       "piattaforma": "PC",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 3.5,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:16:02.043Z",
       "versioneRun": 1,
@@ -557,7 +628,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "ffb14cc1-6e78-44eb-be1c-01c7e104f77e"
+      "runCorrenteId": "ffb14cc1-6e78-44eb-be1c-01c7e104f77e",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 13,
+      "minutiGiocati": 0
     },
     {
       "id": "c9b34730-89ca-4df4-a1be-29e971bd6401",
@@ -570,7 +645,7 @@
       "piattaforma": "PlayStation 5",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 3,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:16:20.326Z",
       "versioneRun": 1,
@@ -582,7 +657,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "cda60106-77e0-4b01-b605-86465622dcbf"
+      "runCorrenteId": "cda60106-77e0-4b01-b605-86465622dcbf",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 0,
+      "minutiGiocati": 0
     },
     {
       "id": "80a6d6fb-b5b8-4850-a9eb-c1d83832c96c",
@@ -595,7 +674,7 @@
       "piattaforma": "PlayStation 5",
       "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 3,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:16:32.359Z",
       "versioneRun": 1,
@@ -607,7 +686,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "c99b80a7-0d68-40e8-8cf8-ee9a2213a310"
+      "runCorrenteId": "c99b80a7-0d68-40e8-8cf8-ee9a2213a310",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 0,
+      "minutiGiocati": 0
     },
     {
       "id": "642b6dea-a1aa-409f-b254-026a7c5299f8",
@@ -645,9 +728,9 @@
         "Action"
       ],
       "piattaforma": "PlayStation 5",
-      "stato": "Abbandonato",
+      "stato": "Finito",
       "platino": false,
-      "voto": null,
+      "voto": 3.5,
       "note": "",
       "aggiuntoIl": "2026-10-26T18:16:53.826Z",
       "versioneRun": 1,
@@ -665,7 +748,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "fde98f0a-6b40-49fc-8e36-49018fdb7e38"
+      "runCorrenteId": "fde98f0a-6b40-49fc-8e36-49018fdb7e38",
+      "dataInizio": null,
+      "dataFine": null,
+      "oreGiocate": 0,
+      "minutiGiocati": 0
     },
     {
       "id": "1c58dbf3-1c3a-4322-ba84-d3c02721d7dc",
@@ -693,32 +780,6 @@
         }
       ],
       "runCorrenteId": "ac64b527-8615-4890-98f9-ea1a2b7411be"
-    },
-    {
-      "id": "0cd5eadd-c462-4027-a095-a5495696b5b0",
-      "rawgId": 257255,
-      "nome": "The Witcher 3 Wild Hunt - Complete Edition",
-      "immagine": "https://media.rawg.io/media/games/52b/52be96c19be0d79eeb8664e4ca2aabd5.jpg",
-      "generi": [
-        "Adventure",
-        "RPG"
-      ],
-      "piattaforma": "PlayStation 5",
-      "stato": "In corso",
-      "platino": false,
-      "voto": null,
-      "note": "",
-      "aggiuntoIl": "2026-10-26T18:17:44.842Z",
-      "versioneRun": 1,
-      "runs": [
-        {
-          "id": "e3f3d618-6da9-4f90-a40d-f929c8ce4003",
-          "numero": 1,
-          "stato": "In corso",
-          "note": ""
-        }
-      ],
-      "runCorrenteId": "e3f3d618-6da9-4f90-a40d-f929c8ce4003"
     },
     {
       "id": "0318dc56-07b4-425c-8874-7804f58d97fc",
@@ -980,32 +1041,6 @@
       "runCorrenteId": "bb237fc9-56b0-4323-8999-6804379405de"
     },
     {
-      "id": "c651364d-b53d-4be2-84af-e8952ecf922d",
-      "rawgId": 471026,
-      "nome": "Fable",
-      "immagine": "https://media.rawg.io/media/games/e06/e06a04ece5555c8c15a7c68e22649f0c.jpg",
-      "generi": [
-        "Action",
-        "RPG"
-      ],
-      "piattaforma": "PC",
-      "stato": "Da iniziare",
-      "platino": false,
-      "voto": null,
-      "note": "",
-      "aggiuntoIl": "2026-10-26T18:21:14.509Z",
-      "versioneRun": 1,
-      "runs": [
-        {
-          "id": "3dda044a-3d87-48c2-a973-d5e4faad38c0",
-          "numero": 1,
-          "stato": "Da iniziare",
-          "note": ""
-        }
-      ],
-      "runCorrenteId": "3dda044a-3d87-48c2-a973-d5e4faad38c0"
-    },
-    {
       "id": "5a769393-481a-454b-9c7c-eae1996603f9",
       "rawgId": 3603,
       "nome": "Metro 2033 Redux",
@@ -1107,6 +1142,102 @@
         }
       ],
       "runCorrenteId": "87ac266b-ae88-4cd2-9c2b-f44f09a50fbb"
+    },
+    {
+      "id": "46899a44-ae0e-48ef-b4fb-4fd5039c834e",
+      "rawgId": 3328,
+      "nome": "The Witcher 3: Wild Hunt",
+      "immagine": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg",
+      "generi": [
+        "Action",
+        "RPG"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Finito",
+      "platino": false,
+      "preferito": true,
+      "voto": 5,
+      "note": "",
+      "dataInizio": "2026-09-30",
+      "dataFine": "2026-10-29",
+      "aggiuntoIl": "2026-10-30T12:06:22.104Z",
+      "oreGiocate": 97,
+      "minutiGiocati": 10
+    },
+    {
+      "id": "ed9922e2-a0d4-445d-80b3-ff790bc8975a",
+      "rawgId": 43252,
+      "nome": "The Witcher 3: Wild Hunt – Blood and Wine",
+      "immagine": "https://media.rawg.io/media/games/b51/b51c3649322ac0de9dfbe83435eda449.jpg",
+      "generi": [
+        "RPG"
+      ],
+      "piattaforma": "PlayStation 4",
+      "stato": "Da iniziare",
+      "platino": false,
+      "preferito": false,
+      "voto": null,
+      "note": "",
+      "dataInizio": null,
+      "dataFine": null,
+      "aggiuntoIl": "2026-10-30T12:06:31.986Z"
+    },
+    {
+      "id": "bd453d1f-173a-4763-9c9e-dc7c094a441c",
+      "rawgId": 43050,
+      "nome": "The Witcher 3: Wild Hunt – Hearts of Stone",
+      "immagine": "https://media.rawg.io/media/games/c19/c193180583c34e5753a1aaf15a586761.jpg",
+      "generi": [
+        "RPG"
+      ],
+      "piattaforma": "PlayStation 4",
+      "stato": "Da iniziare",
+      "platino": false,
+      "preferito": false,
+      "voto": null,
+      "note": "",
+      "dataInizio": null,
+      "dataFine": null,
+      "aggiuntoIl": "2026-10-30T12:06:35.104Z"
+    },
+    {
+      "id": "7bbf0893-08ac-42d0-92fe-279104200bc6",
+      "rawgId": 1018013,
+      "nome": "The Witcher 3: Songs of the Past",
+      "immagine": "https://media.rawg.io/media/screenshots/472/472189e44b839e676ba32c56f01dd1c5.jpg",
+      "generi": [
+        "RPG"
+      ],
+      "piattaforma": "PlayStation 5",
+      "stato": "Da iniziare",
+      "platino": false,
+      "preferito": false,
+      "voto": null,
+      "note": "",
+      "dataInizio": null,
+      "dataFine": null,
+      "aggiuntoIl": "2026-10-30T12:18:37.556Z"
+    },
+    {
+      "id": "5eeb68a0-7611-4ea0-a7fc-ccd53c6e2a8a",
+      "rawgId": 2819,
+      "nome": "Firewatch",
+      "immagine": "https://media.rawg.io/media/games/0be/0bea0a08a4d954337305391b778a7f37.jpg",
+      "generi": [
+        "Indie",
+        "Adventure"
+      ],
+      "piattaforma": "PC",
+      "stato": "Finito",
+      "platino": false,
+      "preferito": false,
+      "voto": 3.5,
+      "note": "",
+      "dataInizio": null,
+      "dataFine": null,
+      "aggiuntoIl": "2026-10-30T12:20:32.596Z",
+      "oreGiocate": 6,
+      "minutiGiocati": 15
     }
   ]
 }
