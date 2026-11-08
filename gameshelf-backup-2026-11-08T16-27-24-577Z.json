@@ -1,7 +1,7 @@
 {
   "app": "GameShelf",
   "versione": 1,
-  "esportatoIl": "2026-11-03T18:33:50.572Z",
+  "esportatoIl": "2026-11-08T16:27:24.577Z",
   "giochi": [
     {
       "id": "c99a5869-dc6a-420c-8291-e20b0ebc1b97",
@@ -1191,14 +1191,16 @@
         "RPG"
       ],
       "piattaforma": "PlayStation 4",
-      "stato": "Da iniziare",
+      "stato": "Finito",
       "platino": false,
       "preferito": false,
-      "voto": null,
+      "voto": 4,
       "note": "",
-      "dataInizio": null,
-      "dataFine": null,
-      "aggiuntoIl": "2026-10-30T12:06:35.104Z"
+      "dataInizio": "2026-10-30",
+      "dataFine": "2026-11-08",
+      "aggiuntoIl": "2026-10-30T12:06:35.104Z",
+      "oreGiocate": 20,
+      "minutiGiocati": 0
     },
     {
       "id": "7bbf0893-08ac-42d0-92fe-279104200bc6",
