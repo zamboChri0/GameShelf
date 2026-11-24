@@ -1,7 +1,7 @@
 {
   "app": "GameShelf",
   "versione": 1,
-  "esportatoIl": "2026-11-08T16:27:24.577Z",
+  "esportatoIl": "2026-11-24T13:35:17.383Z",
   "giochi": [
     {
       "id": "c99a5869-dc6a-420c-8291-e20b0ebc1b97",
@@ -701,7 +701,7 @@
         "Action"
       ],
       "piattaforma": "PlayStation 5",
-      "stato": "Da iniziare",
+      "stato": "In corso",
       "platino": false,
       "voto": null,
       "note": "",
@@ -715,7 +715,11 @@
           "note": ""
         }
       ],
-      "runCorrenteId": "c3f4f293-d2eb-41d5-bf8c-d1d775718ccf"
+      "runCorrenteId": "c3f4f293-d2eb-41d5-bf8c-d1d775718ccf",
+      "dataInizio": "2026-11-19",
+      "dataFine": null,
+      "oreGiocate": 0,
+      "minutiGiocati": 0
     },
     {
       "id": "7d2995ce-e12c-403e-aa91-4d41b82822fe",
