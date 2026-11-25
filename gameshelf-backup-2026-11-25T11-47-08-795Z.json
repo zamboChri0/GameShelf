@@ -1,7 +1,7 @@
 {
   "app": "GameShelf",
   "versione": 1,
-  "esportatoIl": "2026-11-24T13:35:17.383Z",
+  "esportatoIl": "2026-11-25T11:47:08.795Z",
   "giochi": [
     {
       "id": "c99a5869-dc6a-420c-8291-e20b0ebc1b97",
@@ -912,32 +912,6 @@
         }
       ],
       "runCorrenteId": "12574985-ae01-4517-8e91-e2b9b0034d9e"
-    },
-    {
-      "id": "4bb7bcdb-8727-49f8-84d8-a8f68a47eb8f",
-      "rawgId": 1018045,
-      "nome": "God of War Laufey",
-      "immagine": "https://media.rawg.io/media/games/d9e/d9e30f2182a8535a0ef02949dfb1ffed.jpg",
-      "generi": [
-        "Adventure",
-        "Action"
-      ],
-      "piattaforma": "PlayStation 5",
-      "stato": "Da iniziare",
-      "platino": false,
-      "voto": null,
-      "note": "",
-      "aggiuntoIl": "2026-10-26T18:19:42.092Z",
-      "versioneRun": 1,
-      "runs": [
-        {
-          "id": "29ed97fc-b07e-480c-86be-8298fe86fd68",
-          "numero": 1,
-          "stato": "Da iniziare",
-          "note": ""
-        }
-      ],
-      "runCorrenteId": "29ed97fc-b07e-480c-86be-8298fe86fd68"
     },
     {
       "id": "4b6acfce-67f6-4d39-b3f4-2d25e1a52bad",
