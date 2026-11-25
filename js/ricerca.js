@@ -141,23 +141,36 @@ function creaSchedaGioco(gioco) {
   messaggio.className = "messaggio-aggiunta";
   messaggio.setAttribute("role", "status");
 
-  formAggiunta.addEventListener("submit", (evento) => {
+  formAggiunta.addEventListener("submit", async (evento) => {
     evento.preventDefault();
 
     try {
-      const risultato = aggiungiAllaLibreria(
-        gioco,
-        selectPiattaforma.value,
-        selectStato.value
-      );
+      await aggiungiAllaCollezione({
+        lista: "libreria",
+        rawgId: gioco.id,
+        nome: gioco.name,
+        immagine: gioco.image || null,
+        generi: gioco.genres || [],
+        piattaforma: selectPiattaforma.value,
+        stato: selectStato.value,
+        platino: false,
+        preferito: false,
+        voto: null,
+        note: "",
+        dataInizio: null,
+        dataFine: null,
+        oreGiocate: 0,
+        minutiGiocati: 0,
+      });
 
-      messaggio.textContent = risultato.messaggio;
-
+      messaggio.textContent = "Gioco aggiunto alla libreria.";
     } catch (errore) {
       console.error("Errore nel salvataggio:", errore);
 
       messaggio.textContent =
-        "Impossibile salvare il gioco. Controlla che il browser consenta il salvataggio dei dati.";
+        errore.stato === 401
+          ? "Accedi per salvare i giochi nella tua collezione."
+          : errore.message || "Impossibile salvare il gioco.";
     }
   });
 
@@ -166,19 +179,34 @@ function creaSchedaGioco(gioco) {
   pulsanteWishlist.className = "azione-wishlist-secondaria";
   pulsanteWishlist.textContent = "Aggiungi alla wishlist";
 
-  pulsanteWishlist.addEventListener("click", () => {
+  pulsanteWishlist.addEventListener("click", async () => {
     try {
-      const risultato = aggiungiAllaWishlist(
-        gioco,
-        selectPiattaforma.value
-      );
+      await aggiungiAllaCollezione({
+        lista: "wishlist",
+        rawgId: gioco.id,
+        nome: gioco.name,
+        immagine: gioco.image || null,
+        generi: gioco.genres || [],
+        piattaforma: selectPiattaforma.value,
+        stato: null,
+        platino: false,
+        preferito: false,
+        voto: null,
+        note: "",
+        dataInizio: null,
+        dataFine: null,
+        oreGiocate: 0,
+        minutiGiocati: 0,
+      });
 
-      messaggio.textContent = risultato.messaggio;
+      messaggio.textContent = "Gioco aggiunto alla wishlist.";
     } catch (errore) {
       console.error("Errore wishlist:", errore);
 
       messaggio.textContent =
-        "Impossibile aggiungere il gioco alla wishlist.";
+        errore.stato === 401
+          ? "Accedi per salvare i giochi nella tua collezione."
+          : errore.message || "Impossibile aggiungere il gioco alla wishlist.";
     }
   });
 
