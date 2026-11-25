@@ -1243,3 +1243,84 @@ main > .libreria {
     width: 100%;
   }
 }
+
+
+/* Raccolta dei platini */
+
+#messaggio-platini {
+  margin-top: 24px;
+  color: #d9c58b;
+}
+
+#lista-platini {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  align-items: stretch;
+  margin-top: 24px;
+}
+
+#lista-platini .scheda-platino {
+  border-color: #655333;
+  background: linear-gradient(160deg, #242131, #151b2d 65%);
+}
+
+#lista-platini .scheda-platino:hover {
+  border-color: #d6b568;
+}
+
+.immagine-platino {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #20283c;
+}
+
+#lista-platini .immagine-platino img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contenuto-platino {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px;
+}
+
+#lista-platini .contenuto-platino h2 {
+  margin: 0;
+  color: #f4f5fb;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+#lista-platini .contenuto-platino p {
+  margin: 0;
+}
+
+#lista-platini .voto-platino {
+  color: #e9d49b;
+}
+
+.nota-platini {
+  margin-top: 28px;
+  color: #aab6cd;
+  font-size: 0.9rem;
+}
+
+.nota-platini a {
+  color: #c4b5fd;
+}
+
+.nota-platini a:focus-visible,
+#ordine-platini:focus-visible {
+  outline: 3px solid #c4b5fd;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  #lista-platini {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="La raccolta dei miei trofei di platino su GameShelf.">
+
+  <title>GameShelf — Platini</title>
+
+  <link rel="icon" type="image/png" href="./favicon.png?v=1">
+  <link rel="stylesheet" href="css/style.css?v=20">
+</head>
+
+<body>
+  <header>
+    <div class="contenitore barra-sito">
+      <a class="logo logo-link" href="index.html">
+        Game<span>Shelf</span>
+      </a>
+
+      <nav class="navigazione-sito" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <a href="giochi.html">Giochi</a>
+        <a href="libreria.html">Libreria</a>
+        <a href="platini.html" aria-current="page">Platini</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenitore">
+    <section aria-labelledby="titolo-platini">
+      <p class="etichetta">I miei completamenti</p>
+
+      <h1 id="titolo-platini">La mia raccolta di platini</h1>
+
+      <p class="introduzione">
+        I giochi PlayStation in cui ho ottenuto il trofeo di platino.
+        Ogni titolo, un traguardo.
+      </p>
+
+      <p id="messaggio-platini" role="status"></p>
+
+      <div class="filtri-libreria">
+        <label>
+          Ordina per
+          <select id="ordine-platini">
+            <option value="titolo">Titolo A–Z</option>
+            <option value="piattaforma">Piattaforma</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="lista-platini" class="griglia"></div>
+
+      <p class="nota-platini">
+        Per aggiornare un gioco o segnare un nuovo Platino,
+        apri la <a href="libreria.html">Libreria</a>
+        e premi Modifica.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    GameShelf · Il mio diario videoludico
+
+    <p class="crediti-icone">
+      <a href="https://www.flaticon.com/free-icons/games"
+        title="games icons">
+        Games icons created by Magnific - Flaticon
+      </a>
+    </p>
+  </footer>
+
+  <script src="js/storage.js?v=11"></script>
+  <script src="js/platini.js?v=1"></script>
+</body>
+
+</html>
