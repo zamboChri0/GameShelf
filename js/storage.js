@@ -178,3 +178,81 @@ function dateGiocoValide(inizio, fine) {
     )
   );
 }
+
+
+/* Wishlist */
+
+const CHIAVE_WISHLIST = "gameshelf:wishlist:v1";
+
+function leggiWishlist() {
+  const contenuto = localStorage.getItem(CHIAVE_WISHLIST);
+
+  if (!contenuto) {
+    return [];
+  }
+
+  const giochi = JSON.parse(contenuto);
+
+  if (!Array.isArray(giochi)) {
+    throw new Error("I dati della wishlist non sono validi.");
+  }
+
+  return giochi;
+}
+
+function salvaWishlist(giochi) {
+  localStorage.setItem(CHIAVE_WISHLIST, JSON.stringify(giochi));
+}
+
+function aggiungiAllaWishlist(gioco, piattaforma) {
+  const wishlist = leggiWishlist();
+
+  const giaInWishlist = wishlist.some((elemento) =>
+    elemento.rawgId === gioco.id &&
+    elemento.piattaforma === piattaforma
+  );
+
+  if (giaInWishlist) {
+    return {
+      aggiunto: false,
+      messaggio: "Questo gioco è già nella wishlist su questa piattaforma.",
+    };
+  }
+
+  const giaInLibreria = leggiLibreria().some((elemento) =>
+    elemento.rawgId === gioco.id &&
+    elemento.piattaforma === piattaforma
+  );
+
+  if (giaInLibreria) {
+    return {
+      aggiunto: false,
+      messaggio: "Questo gioco è già nella libreria su questa piattaforma.",
+    };
+  }
+
+  wishlist.push({
+    id: crypto.randomUUID(),
+    rawgId: gioco.id,
+    nome: gioco.name,
+    immagine: gioco.image || null,
+    generi: gioco.genres || [],
+    piattaforma,
+    aggiuntoIl: new Date().toISOString(),
+  });
+
+  salvaWishlist(wishlist);
+
+  return {
+    aggiunto: true,
+    messaggio: "Gioco aggiunto alla wishlist!",
+  };
+}
+
+function rimuoviDallaWishlist(id) {
+  const wishlist = leggiWishlist();
+
+  salvaWishlist(
+    wishlist.filter((gioco) => gioco.id !== id)
+  );
+}

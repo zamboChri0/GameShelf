@@ -161,10 +161,32 @@ function creaSchedaGioco(gioco) {
     }
   });
 
+    const pulsanteWishlist = document.createElement("button");
+  pulsanteWishlist.type = "button";
+  pulsanteWishlist.className = "azione-wishlist-secondaria";
+  pulsanteWishlist.textContent = "Aggiungi alla wishlist";
+
+  pulsanteWishlist.addEventListener("click", () => {
+    try {
+      const risultato = aggiungiAllaWishlist(
+        gioco,
+        selectPiattaforma.value
+      );
+
+      messaggio.textContent = risultato.messaggio;
+    } catch (errore) {
+      console.error("Errore wishlist:", errore);
+
+      messaggio.textContent =
+        "Impossibile aggiungere il gioco alla wishlist.";
+    }
+  });
+
   formAggiunta.append(
     labelPiattaforma,
     labelStato,
     pulsanteAggiungi,
+    pulsanteWishlist,
     messaggio
   );
 

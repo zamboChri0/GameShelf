@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="I giochi che desidero aggiungere alla mia collezione.">
+
+  <title>GameShelf — Wishlist</title>
+
+  <link rel="icon" type="image/png" href="./favicon.png?v=1">
+  <link rel="stylesheet" href="css/style.css?v=21">
+</head>
+
+<body>
+  <header>
+    <div class="contenitore barra-sito">
+      <a class="logo logo-link" href="index.html">
+        Game<span>Shelf</span>
+      </a>
+
+      <nav class="navigazione-sito" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <a href="giochi.html">Giochi</a>
+        <a href="libreria.html">Libreria</a>
+        <a href="platini.html">Platini</a>
+        <a href="wishlist.html" aria-current="page">Wishlist</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenitore">
+    <section aria-labelledby="titolo-wishlist">
+      <p class="etichetta">Le prossime avventure</p>
+
+      <h1 id="titolo-wishlist">La mia wishlist</h1>
+
+      <p class="introduzione">
+        I giochi che desidero aggiungere alla collezione.
+        Quando arriva il momento, li trasferisco nella libreria.
+      </p>
+
+      <p>
+        <a class="link-wishlist" href="giochi.html">
+          Cerca giochi da aggiungere →
+        </a>
+      </p>
+
+      <p id="messaggio-wishlist" role="status"></p>
+
+      <div id="lista-wishlist" class="griglia"></div>
+    </section>
+  </main>
+
+  <footer>
+    GameShelf · Il mio diario videoludico
+  </footer>
+
+  <script src="js/storage.js?v=12"></script>
+  <script src="js/wishlist.js?v=1"></script>
+</body>
+
+</html>
