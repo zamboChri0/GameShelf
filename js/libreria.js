@@ -12,6 +12,9 @@ const filtroPreferiti = document.getElementById("filtro-preferiti");
 
 messaggioLibreria.setAttribute("role", "status");
 
+// Items of the account's library, loaded from the API.
+let libreria = [];
+
 ricercaLibreria.addEventListener("input", mostraLibreria);
 
 [
@@ -66,7 +69,7 @@ function mostraLibreria() {
   listaLibreria.replaceChildren();
 
   try {
-    const giochi = leggiLibreria();
+    const giochi = libreria;
 
     aggiornaFiltroPiattaforme(giochi);
 
@@ -274,23 +277,15 @@ function creaSchedaLibreria(gioco) {
 
   pulsantePreferito.appendChild(iconaCuore);
 
-  pulsantePreferito.addEventListener("click", () => {
+  pulsantePreferito.addEventListener("click", async () => {
     try {
-      const attuale = leggiLibreria().find(
-        (elemento) => elemento.id === gioco.id
-      );
+      const nuovoValore = gioco.preferito !== true;
 
-      if (!attuale) {
-        throw new Error("Gioco non trovato.");
-      }
-
-      const nuovoValore = attuale.preferito !== true;
-
-      aggiornaGioco(gioco.id, {
+      await aggiornaElemento(gioco.id, {
         preferito: nuovoValore,
       });
 
-      mostraLibreria();
+      await caricaLibreria();
 
       const nuovoPulsante = [
         ...listaLibreria.querySelectorAll(".pulsante-preferito"),
@@ -625,7 +620,7 @@ function apriModificaGioco(gioco) {
   pulsanteAnnulla.className = "pulsante-secondario";
   pulsanteAnnulla.textContent = "Annulla";
 
-  form.addEventListener("submit", (evento) => {
+  form.addEventListener("submit", async (evento) => {
     evento.preventDefault();
 
     try {
@@ -636,7 +631,7 @@ function apriModificaGioco(gioco) {
         throw new Error("Il tempo giocato non può essere negativo.");
       }
 
-      aggiornaGioco(gioco.id, {
+      await aggiornaElemento(gioco.id, {
         stato: selectStato.value,
         platino: supportaPlatino && checkboxPlatino.checked,
         voto: selectVoto.value === ""
@@ -652,7 +647,7 @@ function apriModificaGioco(gioco) {
 
 
       chiudiModifica();
-      mostraLibreria();
+      await caricaLibreria();
     } catch (errore) {
       console.error("Errore nell'aggiornamento:", errore);
       messaggio.textContent =
@@ -666,7 +661,7 @@ function apriModificaGioco(gioco) {
   pulsanteElimina.className = "pulsante-elimina";
   pulsanteElimina.textContent = "Elimina dalla libreria";
 
-  pulsanteElimina.addEventListener("click", () => {
+  pulsanteElimina.addEventListener("click", async () => {
     const confermato = window.confirm(
       `Vuoi eliminare "${gioco.nome}" dalla libreria su ${gioco.piattaforma}?`
     );
@@ -676,9 +671,9 @@ function apriModificaGioco(gioco) {
     }
 
     try {
-      eliminaDallaLibreria(gioco.id);
+      await eliminaElemento(gioco.id);
       chiudiModifica();
-      mostraLibreria();
+      await caricaLibreria();
     } catch (errore) {
       console.error("Errore nell'eliminazione:", errore);
       messaggio.textContent = "Impossibile eliminare il gioco.";
@@ -722,4 +717,32 @@ function apriModificaGioco(gioco) {
   document.body.appendChild(overlay);
 }
 
-mostraLibreria();
+// Loads the account's library from the API and redraws the page.
+async function caricaLibreria() {
+  try {
+    const dati = await caricaCollezione();
+    libreria = dati.libreria;
+    mostraLibreria();
+  } catch (errore) {
+    if (errore.stato === 401) {
+      window.location.href = "accesso.html";
+      return;
+    }
+
+    console.error("Errore nel caricamento della libreria:", errore);
+    messaggioLibreria.textContent = errore.message;
+  }
+}
+
+const pulsanteEsci = document.getElementById("esci-account");
+
+pulsanteEsci.addEventListener("click", async () => {
+  await esci();
+  window.location.href = "accesso.html";
+});
+
+if (haAccesso()) {
+  caricaLibreria();
+} else {
+  window.location.href = "accesso.html";
+}
