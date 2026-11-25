@@ -37,7 +37,7 @@
 
       <div class="strumenti-backup">
         <button type="button" id="esporta-backup">
-          Esporta backup
+          Esporta backup completo
         </button>
 
         <button type="button" id="importa-backup">
@@ -47,7 +47,10 @@
         <input type="file" id="file-backup" accept=".json,application/json" hidden>
       </div>
 
-      <p id="messaggio-backup" role="status"></p>
+      <p class="aiuto-date">
+        Il backup completo include Libreria e Wishlist.
+        Importando un vecchio backup, la Wishlist resta invariata.
+      </p>
 
       <div class="filtri-libreria">
         <label class="ricerca-libreria">
@@ -120,7 +123,7 @@
 
   <script src="js/storage.js?v=12"></script>
   <script src="js/libreria.js?v=12"></script>
-  <script src="js/backup.js?v=11"></script>
+  <script src="js/backup.js?v=12"></script>
 
 
 
