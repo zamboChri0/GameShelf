@@ -1,11 +1,30 @@
 const listaWishlist = document.getElementById("lista-wishlist");
 const messaggioWishlist = document.getElementById("messaggio-wishlist");
 
+// Items of the account's wishlist, loaded from the API.
+let wishlist = [];
+
+async function caricaWishlist() {
+  try {
+    const dati = await caricaCollezione();
+    wishlist = dati.wishlist;
+    mostraWishlist();
+  } catch (errore) {
+    if (errore.stato === 401) {
+      window.location.href = "accesso.html";
+      return;
+    }
+
+    console.error("Errore nel caricamento della wishlist:", errore);
+    messaggioWishlist.textContent = errore.message;
+  }
+}
+
 function mostraWishlist() {
   listaWishlist.replaceChildren();
 
   try {
-    const giochi = leggiWishlist().slice().reverse();
+    const giochi = wishlist.slice().reverse();
 
     messaggioWishlist.textContent =
       `Giochi nella wishlist: ${giochi.length}.`;
@@ -72,7 +91,7 @@ function creaSchedaWishlist(gioco) {
   rimuovi.className = "azione-wishlist-secondaria";
   rimuovi.textContent = "Rimuovi dalla wishlist";
 
-  trasferisci.addEventListener("click", () => {
+  trasferisci.addEventListener("click", async () => {
     const confermato = window.confirm(
       `Vuoi spostare "${gioco.nome}" nella libreria ` +
       `su ${gioco.piattaforma}, con stato Da iniziare?`
@@ -83,44 +102,24 @@ function creaSchedaWishlist(gioco) {
     }
 
     try {
-      const giaInLibreria = leggiLibreria().some((elemento) =>
-        elemento.rawgId === gioco.rawgId &&
-        elemento.piattaforma === gioco.piattaforma
-      );
+      await spostaInLibreria(gioco.id);
+      await caricaWishlist();
 
-      if (!giaInLibreria) {
-        const risultato = aggiungiAllaLibreria(
-          {
-            id: gioco.rawgId,
-            name: gioco.nome,
-            image: gioco.immagine,
-            genres: gioco.generi,
-          },
-          gioco.piattaforma,
-          "Da iniziare"
-        );
-
-        if (!risultato.aggiunto) {
-          throw new Error(risultato.messaggio);
-        }
-      }
-
-      rimuoviDallaWishlist(gioco.id);
-      mostraWishlist();
-
-      messaggioWishlist.textContent += giaInLibreria
-        ? " Il gioco era già nella libreria: rimossa la voce dalla wishlist."
-        : " Gioco spostato nella libreria.";
+      messaggioWishlist.textContent += " Gioco spostato nella libreria.";
     } catch (errore) {
       console.error("Errore nel trasferimento:", errore);
 
+      if (errore.stato === 401) {
+        window.location.href = "accesso.html";
+        return;
+      }
+
       messaggioWishlist.textContent =
-        "Trasferimento non completato. " +
-        "Controlla Libreria e Wishlist prima di riprovare.";
+        "Trasferimento non completato. " + errore.message;
     }
   });
 
-  rimuovi.addEventListener("click", () => {
+  rimuovi.addEventListener("click", async () => {
     const confermato = window.confirm(
       `Vuoi rimuovere "${gioco.nome}" dalla wishlist?`
     );
@@ -130,13 +129,18 @@ function creaSchedaWishlist(gioco) {
     }
 
     try {
-      rimuoviDallaWishlist(gioco.id);
-      mostraWishlist();
+      await eliminaElemento(gioco.id);
+      await caricaWishlist();
 
       messaggioWishlist.textContent +=
         " Gioco rimosso dalla wishlist.";
     } catch (errore) {
       console.error("Errore nella rimozione:", errore);
+
+      if (errore.stato === 401) {
+        window.location.href = "accesso.html";
+        return;
+      }
 
       messaggioWishlist.textContent =
         "Impossibile rimuovere il gioco dalla wishlist.";
@@ -149,4 +153,8 @@ function creaSchedaWishlist(gioco) {
   return scheda;
 }
 
-mostraWishlist();
+if (haAccesso()) {
+  caricaWishlist();
+} else {
+  window.location.href = "accesso.html";
+}
