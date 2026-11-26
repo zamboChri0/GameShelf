@@ -168,7 +168,7 @@ function leggiFileBackup(testo) {
   let backup;
 
   try {
-    backup = JSON.parse(testo.replace(/^\uFEFF/, ""));
+    backup = JSON.parse(testo.replace(/^﻿/, ""));
   } catch {
     throw new Error("Il file non contiene un JSON valido.");
   }
@@ -200,71 +200,29 @@ function leggiFileBackup(testo) {
   };
 }
 
-function applicaBackup(backup) {
-  const libreriaPrecedente =
-    localStorage.getItem(CHIAVE_LIBRERIA);
-
-  const wishlistPrecedente =
-    localStorage.getItem(CHIAVE_WISHLIST);
-
-  try {
-    salvaLibreria(backup.giochi);
-
-    if (backup.versione === 2) {
-      salvaWishlist(backup.wishlist);
-    }
-  } catch (errore) {
-    try {
-      if (libreriaPrecedente === null) {
-        localStorage.removeItem(CHIAVE_LIBRERIA);
-      } else {
-        localStorage.setItem(
-          CHIAVE_LIBRERIA,
-          libreriaPrecedente
-        );
-      }
-
-      if (backup.versione === 2) {
-        if (wishlistPrecedente === null) {
-          localStorage.removeItem(CHIAVE_WISHLIST);
-        } else {
-          localStorage.setItem(
-            CHIAVE_WISHLIST,
-            wishlistPrecedente
-          );
-        }
-      }
-    } catch (erroreRipristino) {
-      console.error(
-        "Errore nel ripristino dei dati precedenti:",
-        erroreRipristino
-      );
-
-      throw new Error(
-        "Salvataggio interrotto e ripristino automatico " +
-        "non riuscito. Non cancellare i backup e controlla " +
-        "i dati presenti in Libreria e Wishlist."
-      );
-    }
-
-    console.error("Errore nel salvataggio del backup:", errore);
-
-    throw new Error(
-      "Il backup non è stato applicato. " +
-      "I dati precedenti sono stati ripristinati."
-    );
-  }
+// Sends the backup to the account. The server replaces the data in one transaction.
+async function applicaBackup(backup) {
+  await chiamaApi("/collezione/importa", {
+    metodo: "POST",
+    corpo: {
+      giochi: backup.giochi,
+      wishlist: backup.versione === 2 ? backup.wishlist : null,
+    },
+    autenticato: true,
+  });
 }
 
-pulsanteEsporta.addEventListener("click", () => {
+pulsanteEsporta.addEventListener("click", async () => {
   messaggioBackup.textContent = "";
 
   try {
+    const dati = await caricaCollezione();
+
     const giochi = validaTempoBackup(
-      validaGiochiBackup(leggiLibreria())
+      validaGiochiBackup(dati.libreria)
     );
 
-    const wishlist = validaWishlistBackup(leggiWishlist());
+    const wishlist = validaWishlistBackup(dati.wishlist);
     const adesso = new Date();
 
     const backup = {
@@ -304,6 +262,11 @@ pulsanteEsporta.addEventListener("click", () => {
   } catch (errore) {
     console.error("Errore esportazione:", errore);
 
+    if (errore.stato === 401) {
+      window.location.href = "accesso.html";
+      return;
+    }
+
     messaggioBackup.textContent =
       `Backup non esportato: ${errore.message}`;
   }
@@ -325,8 +288,6 @@ inputBackup.addEventListener("change", async () => {
   pulsanteEsporta.disabled = true;
   messaggioBackup.textContent = "Controllo del backup...";
 
-  let salvato = false;
-
   try {
     if (file.size > 5 * 1024 * 1024) {
       throw new Error(
@@ -341,13 +302,13 @@ inputBackup.addEventListener("change", async () => {
       ? (
           `Il backup contiene ${backup.giochi.length} giochi ` +
           `in libreria e ${backup.wishlist.length} nella wishlist.\n\n` +
-          "Libreria e Wishlist attuali su questo browser " +
-          "verranno sostituite, non unite al backup."
+          "Libreria e wishlist del tuo account verranno " +
+          "sostituite, non unite al backup."
         )
       : (
           `Il backup contiene ${backup.giochi.length} giochi.\n\n` +
           "È un backup precedente: verrà sostituita soltanto " +
-          "la Libreria. La Wishlist attuale resterà invariata."
+          "la libreria. La wishlist attuale resterà invariata."
         );
 
     const confermato = window.confirm(
@@ -362,10 +323,8 @@ inputBackup.addEventListener("change", async () => {
       return;
     }
 
-    applicaBackup(backup);
-    salvato = true;
-
-    mostraLibreria();
+    await applicaBackup(backup);
+    await caricaLibreria();
 
     messaggioBackup.textContent = backup.versione === 2
       ? (
@@ -374,17 +333,18 @@ inputBackup.addEventListener("change", async () => {
         )
       : (
           `Backup importato: ${backup.giochi.length} giochi ` +
-          "ripristinati. Wishlist lasciata invariata."
+          "nella libreria. Wishlist lasciata invariata."
         );
   } catch (errore) {
     console.error("Errore importazione:", errore);
 
-    messaggioBackup.textContent = salvato
-      ? (
-          "Dati salvati, ma la visualizzazione non si è aggiornata. " +
-          "Ricarica la pagina."
-        )
-      : `Importazione non riuscita: ${errore.message}`;
+    if (errore.stato === 401) {
+      window.location.href = "accesso.html";
+      return;
+    }
+
+    messaggioBackup.textContent =
+      `Importazione non riuscita: ${errore.message}`;
   } finally {
     inputBackup.value = "";
     pulsanteImporta.disabled = false;

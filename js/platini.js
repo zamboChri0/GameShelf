@@ -4,6 +4,25 @@ const ordinePlatini = document.getElementById("ordine-platini");
 
 ordinePlatini.addEventListener("change", mostraPlatini);
 
+// Library items of the account, loaded from the API.
+let libreria = [];
+
+async function caricaPlatini() {
+  try {
+    const dati = await caricaCollezione();
+    libreria = dati.libreria;
+    mostraPlatini();
+  } catch (errore) {
+    if (errore.stato === 401) {
+      window.location.href = "accesso.html";
+      return;
+    }
+
+    console.error("Errore nel caricamento dei platini:", errore);
+    messaggioPlatini.textContent = errore.message;
+  }
+}
+
 function confrontaTitoliPlatini(a, b) {
   return String(a.nome ?? "").localeCompare(
     String(b.nome ?? ""),
@@ -16,7 +35,7 @@ function mostraPlatini() {
   listaPlatini.replaceChildren();
 
   try {
-    const platini = leggiLibreria().filter((gioco) =>
+    const platini = libreria.filter((gioco) =>
       /playstation/i.test(gioco.piattaforma) &&
       gioco.platino === true
     );
@@ -119,4 +138,8 @@ function creaSchedaPlatino(gioco) {
   return scheda;
 }
 
-mostraPlatini();
+if (haAccesso()) {
+  caricaPlatini();
+} else {
+  window.location.href = "accesso.html";
+}

@@ -1,0 +1,5 @@
+# File di sistema macOS
+.DS_Store
+
+# Backup personali: non versionare
+gameshelf-backup-*.json

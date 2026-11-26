@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Accedi o crea il tuo account GameShelf.">
+
+  <title>GameShelf — Accesso</title>
+
+  <link rel="icon" type="image/png" href="./favicon.png?v=1">
+  <link rel="stylesheet" href="css/style.css?v=21">
+</head>
+
+<body>
+  <header>
+    <div class="contenitore barra-sito">
+      <a class="logo logo-link" href="index.html">
+        Game<span>Shelf</span>
+      </a>
+
+      <nav class="navigazione-sito" aria-label="Navigazione principale">
+        <a href="index.html">Home</a>
+        <a href="giochi.html">Giochi</a>
+        <a href="libreria.html">Libreria</a>
+        <a href="platini.html">Platini</a>
+        <a href="wishlist.html">Wishlist</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenitore">
+    <section aria-labelledby="titolo-accesso">
+      <p class="etichetta">Il tuo account</p>
+
+      <h1 id="titolo-accesso">Accedi a GameShelf</h1>
+
+      <p class="introduzione">
+        Accedi o crea un account per ritrovare la tua libreria
+        e la wishlist da qualsiasi dispositivo.
+      </p>
+
+      <form id="form-accesso" class="form-aggiunta">
+        <label>
+          Email
+          <input type="email" id="email" required autocomplete="email" maxlength="254">
+        </label>
+
+        <label>
+          Password
+          <input type="password" id="password" required minlength="8" maxlength="200"
+            autocomplete="current-password">
+        </label>
+
+        <p class="aiuto-date">
+          Per creare un account la password deve avere almeno 8 caratteri.
+        </p>
+
+        <div class="azioni-scheda">
+          <button type="submit" id="pulsante-accedi">Accedi</button>
+          <button type="submit" id="pulsante-registra" class="pulsante-secondario">Crea account</button>
+        </div>
+
+        <p id="messaggio-accesso" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    GameShelf · Il mio diario videoludico
+  </footer>
+
+  <script src="js/api.js?v=1"></script>
+  <script src="js/accesso.js?v=1"></script>
+</body>
+
+</html>
